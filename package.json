@@ -1,0 +1,25 @@
+{
+	"dependencies": {
+		"mongoose": "^6.5.4",
+		"nodemon": "^2.0.19"
+	},
+	"name": "whips-car-rental",
+	"description": "",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon src/index.js",
+		"start": "node src/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/awarsame1996/whips-car-rental.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/awarsame1996/whips-car-rental/issues"
+	},
+	"homepage": "https://github.com/awarsame1996/whips-car-rental#readme"
+}
