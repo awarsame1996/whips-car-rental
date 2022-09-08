@@ -1,5 +1,6 @@
 import './App.css';
+import { SignupForm } from './components/signupForm';
 
 export const App = () => {
-	return <div>hello world</div>;
+	return <SignupForm></SignupForm>;
 };
