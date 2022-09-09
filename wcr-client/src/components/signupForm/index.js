@@ -1,16 +1,14 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-// import { useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-// import { SIGNUP } from '../../mutations';
+import { SIGNUP } from '../../mutations';
 
 export const SignupForm = () => {
-	// const signup = useMutation(SIGNUP);
-
 	const {
 		register,
 		handleSubmit,
@@ -18,30 +16,57 @@ export const SignupForm = () => {
 		formState: { errors },
 	} = useForm();
 
-	const onSubmit = (formData) => {
-		if (formData.password !== formData.confirmPassword) {
+	const [signup, { loading, error }] = useMutation(SIGNUP, {
+		onCompleted: (data) => {
+			console.log(data);
+		},
+		onError: (error) => {
+			console.error(error);
+		},
+	});
+
+	const onSubmit = async (formData) => {
+		const {
+			firstName,
+			lastName,
+			username,
+			email,
+			password,
+			confirmPassword,
+		} = formData;
+		if (password !== confirmPassword) {
 			setError('confirmPassword', {
 				type: 'manual',
 				message: 'Passwords do not match.',
 			});
 		} else {
 			const signupInput = {
-				firstName: formData.firstName,
-				lastName: formData.lastName,
-				username: formData.username,
-				email: formData.email,
-				password: formData.password,
-				// };
-
-				// signup({
-				// 	variables: {
-				// 		signupInput,
-				// 	},
-				// });
+				firstName,
+				lastName,
+				username,
+				email,
+				password,
 			};
-			console.log(signupInput);
+
+			try {
+				await signup({
+					variables: {
+						signupInput,
+					},
+				});
+			} catch (error) {
+				console.error(error.message);
+			}
 		}
 	};
+
+	if (loading) {
+		return <div>Lodaing...</div>;
+	}
+
+	if (error) {
+		return <div>error...</div>;
+	}
 
 	return (
 		<Form onSubmit={handleSubmit(onSubmit)}>
@@ -54,7 +79,7 @@ export const SignupForm = () => {
 							placeholder='Enter first Name'
 							{...register('firstName', { required: true })}
 						/>
-						{errors.lastName && <p>Last name is required.</p>}
+						{errors.firstName && <p>first name is required.</p>}
 					</Form.Group>
 				</Col>
 				<Col>
