@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 // import { useMutation } from '@apollo/client';
 
 import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 // import { SIGNUP } from '../../mutations';
 
@@ -13,7 +15,6 @@ export const SignupForm = () => {
 		register,
 		handleSubmit,
 		setError,
-		clearErrors,
 		formState: { errors },
 	} = useForm();
 
@@ -44,24 +45,30 @@ export const SignupForm = () => {
 
 	return (
 		<Form onSubmit={handleSubmit(onSubmit)}>
-			<Form.Group className='mb-3' controlId='firstName'>
-				<Form.Label>first name</Form.Label>
-				<Form.Control
-					type='text'
-					placeholder='Enter first Name'
-					{...register('firstName', { required: true })}
-				/>
-				{errors.lastName && <p>Last name is required.</p>}
-			</Form.Group>
-			<Form.Group className='mb-3' controlId='firstName'>
-				<Form.Label>last name</Form.Label>
-				<Form.Control
-					type='text'
-					placeholder='Enter last Name'
-					{...register('lastName', { required: true })}
-				/>
-			</Form.Group>
-			<Form.Group className='mb-3' controlId='firstName'>
+			<Row>
+				<Col>
+					<Form.Group className='mb-3' controlId='firstName'>
+						<Form.Label>first name</Form.Label>
+						<Form.Control
+							type='text'
+							placeholder='Enter first Name'
+							{...register('firstName', { required: true })}
+						/>
+						{errors.lastName && <p>Last name is required.</p>}
+					</Form.Group>
+				</Col>
+				<Col>
+					<Form.Group className='mb-3' controlId='firstName'>
+						<Form.Label>last name</Form.Label>
+						<Form.Control
+							type='text'
+							placeholder='Enter last Name'
+							{...register('lastName', { required: true })}
+						/>
+					</Form.Group>
+				</Col>
+			</Row>
+			<Form.Group className='mb-3' controlId='email'>
 				<Form.Label>email</Form.Label>
 				<Form.Control
 					type='email'
@@ -69,7 +76,7 @@ export const SignupForm = () => {
 					{...register('email', { required: true })}
 				/>
 			</Form.Group>
-			<Form.Group className='mb-3' controlId='firstName'>
+			<Form.Group className='mb-3' controlId='username'>
 				<Form.Label>username</Form.Label>
 				<Form.Control
 					type='text'
@@ -77,7 +84,7 @@ export const SignupForm = () => {
 					{...register('username', { required: true })}
 				/>
 			</Form.Group>
-			<Form.Group className='mb-3' controlId='formBasicPassword'>
+			<Form.Group className='mb-3' controlId='password'>
 				<Form.Label>Password</Form.Label>
 				<Form.Control
 					type='password'
@@ -85,7 +92,7 @@ export const SignupForm = () => {
 					{...register('password', { required: true })}
 				/>
 			</Form.Group>
-			<Form.Group className='mb-3' controlId='formBasicPassword'>
+			<Form.Group className='mb-3' controlId='confirmPassword'>
 				<Form.Label>confirmPassword</Form.Label>
 				<Form.Control
 					type='password'

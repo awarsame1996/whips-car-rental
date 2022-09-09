@@ -1,6 +1,12 @@
 import './App.css';
-import { SignupForm } from './components/signupForm';
+import { LoginForm } from './components/loginForm';
+import { Navbars } from './components/navBar';
 
 export const App = () => {
-	return <SignupForm></SignupForm>;
+	return (
+		<div>
+			<Navbars></Navbars>
+			<LoginForm></LoginForm>;
+		</div>
+	);
 };
