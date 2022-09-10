@@ -6,23 +6,25 @@ export const HomePage = () => {
   return (
     <div>
       {/* component one */}
-      <div className="vh-40  ">
-        <div className=" text-container mb-4  text-center">
-          <h1 className="banner-txt col-md-8">
-            <strong>Welcome to Whips</strong>
-          </h1>
-          <h4 className="text-muted col-md-8">
-            The ultimate rental experience
-          </h4>
-        </div>
+      {/* <div className="intro-section ">
+        <div className="text-container">
+          <div className="  mb-4  text-center">
+            <h1 className="banner-txt col-md-8">
+              <strong>WELCOME TO WHIPS</strong>
+            </h1>
+            <h4 className="text-muted col-md-8">
+              The Ultimate Rental Experience
+            </h4>
+          </div>
 
-        <div className="car-imge">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqVTs39rumD-jz5DRLcfXK6s529q71Qj_WUg&usqp=CAU"
-            className="car-imge"
-          />
+          <div className="car-imge">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqVTs39rumD-jz5DRLcfXK6s529q71Qj_WUg&usqp=CAU"
+              className="car-imge"
+            />
+          </div>
         </div>
-      </div>
+      </div> */}
       {/* <div className="about-section">
         <div className="about-image-container">
           <img
@@ -35,7 +37,7 @@ export const HomePage = () => {
           <h5 className="mt-5">
             <strong>Travel safely and confidently</strong>
           </h5>
-          <p className="text-muted">
+          <p className="text-muted mt-4 mb-5">
             Since 2000, we at wips have strived to provide customers with the
             easiest and most convenient way to rent a vehicle. Whether you’re
             looking for a larger utility vehicle, or something small and
@@ -46,11 +48,115 @@ export const HomePage = () => {
           <p>Learn More</p>
         </div>
       </div> */}
+      {/* <div className="contact-section-container mt-5">
+        <div className="contact-section mt-5">
+          <div className="">
+            <div className="  mb-4  text-center">
+              <h1 className="">
+                <strong>GET IN TOUCH</strong>
+              </h1>
+              <h6 className="text-muted mt-4 ">12 Bay Tree Close</h6>
+              <h6 className="text-muted mt-4 ">abdilatifwarsame@gmail.com</h6>
+              <h6 className="text-muted mt-4 ">07838192864</h6>
+            </div>
+          </div>
+          <div className="">
+            <div className="card-body">
+              <form>
+                <div className="row mb-2">
+                  <div className="col">
+                    <div className="form-outline">
+                      <input
+                        type="text"
+                        id="form7Example1"
+                        class="form-control"
+                      />
+                      <label className="form-label" for="form7Example1">
+                        Name
+                      </label>
+                    </div>
+                  </div>
+                  <div className="col">
+                    <div className="form-outline">
+                      <input
+                        type="text"
+                        id="form7Example2"
+                        class="form-control"
+                      />
+                      <label className="form-label" for="form7Example2">
+                        Email
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div className="row mb-2">
+                  <div className="col">
+                    <div className="form-outline">
+                      <input
+                        type="text"
+                        id="form7Example1"
+                        class="form-control"
+                      />
+                      <label className="form-label" for="form7Example1">
+                        Phone
+                      </label>
+                    </div>
+                  </div>
+                  <div className="col">
+                    <div className="form-outline">
+                      <input
+                        type="text"
+                        id="form7Example2"
+                        class="form-control"
+                      />
+                      <label className="form-label" for="form7Example2">
+                        Address
+                      </label>
+                    </div>
+                  </div>
+                </div>
 
-      <div className="vh-40 mt-1">
-        <div className="vh-40 mt-1"></div>
-        <div className="vh-40 mt-1"></div>
-      </div>
+                <div className="col">
+                  <div className="form-outline">
+                    <input
+                      type="text"
+                      id="form7Example1"
+                      class="form-control"
+                    />
+                    <label className="form-label" for="form7Example1">
+                      Subject
+                    </label>
+                  </div>
+                </div>
+
+                <div className="form-outline mb-2">
+                  <textarea
+                    className="form-control"
+                    id="form7Example7"
+                    rows="4"
+                  ></textarea>
+                  <label className="form-label" for="form7Example7">
+                    Type Your message here...
+                  </label>
+                </div>
+
+                <div class="form-check d-flex justify-content-center mb-2">
+                  <input
+                    className="form-check-input me-2"
+                    type="checkbox"
+                    value=""
+                    id="form7Example8"
+                    checked
+                  />
+                  <label className="form-check-label" for="form7Example8">
+                    Create an account?
+                  </label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div> */}
     </div>
   );
 };
