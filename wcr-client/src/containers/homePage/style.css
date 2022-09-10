@@ -1,8 +1,10 @@
 .vh-40 {
   height: 40vh;
+
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 3rem;
 }
 .about-section {
   display: flex;
@@ -18,7 +20,10 @@
   height: 40vh;
 }
 .car-imge {
-  height: 30rem;
+  width: 490px;
+  height: 660px;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 .about-image {
   width: 90vw;
@@ -32,4 +37,10 @@
 }
 .about-text {
   margin-bottom: 7rem;
+}
+.banner-txt {
+  font-size: 5rem;
+}
+.text-container {
+  margin-top: 11rem;
 }
