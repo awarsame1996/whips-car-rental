@@ -1,21 +1,38 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 
 export const Navbars = () => {
 	return (
-		<>
-			<Navbar bg='dark' variant='dark'>
-				<Container>
-					<Navbar.Brand href='#home'>Whips</Navbar.Brand>
-					<Nav className='ml-auto'>
-						<Nav.Link href='#home'>Home</Nav.Link>
-						<Nav.Link href='#Vehicles'>Vehicles</Nav.Link>
-						<Nav.Link href='#Bookings'>Bookings</Nav.Link>
-					</Nav>
-				</Container>
-			</Navbar>
-		</>
+		<nav className='navbar navbar-expand-lg navbar-dark bg-dark bg-light'>
+			<div className='container-fluid'>
+				<a className='navbar-brand' href='#'>
+					Navbar
+				</a>
+				<button
+					className='navbar-toggler'
+					type='button'
+					data-mdb-toggle='collapse'
+					data-mdb-target='#navbarNavAltMarkup'
+					aria-controls='navbarNavAltMarkup'
+					aria-expanded='false'
+					aria-label='Toggle navigation'
+				>
+					<i className='fas fa-bars'></i>
+				</button>
+				<div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
+					<div className='navbar-nav'>
+						<a className='nav-link active' aria-current='page' href='#'>
+							Home
+						</a>
+						<a className='nav-link' href='#'>
+							Features
+						</a>
+						<a className='nav-link' href='#'>
+							Pricing
+						</a>
+						<a className='nav-link disabled'>Disabled</a>
+					</div>
+				</div>
+			</div>
+		</nav>
 	);
 };

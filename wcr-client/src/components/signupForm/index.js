@@ -2,10 +2,6 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useMutation } from '@apollo/client';
 
-import Form from 'react-bootstrap/Form';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
 import { SIGNUP } from '../../mutations';
 
 export const SignupForm = () => {
@@ -47,6 +43,7 @@ export const SignupForm = () => {
 				email,
 				password,
 			};
+			console.log(signupInput);
 
 			try {
 				await signup({
@@ -69,68 +66,79 @@ export const SignupForm = () => {
 	}
 
 	return (
-		<Form onSubmit={handleSubmit(onSubmit)}>
-			<Row>
-				<Col>
-					<Form.Group className='mb-3' controlId='firstName'>
-						<Form.Label>first name</Form.Label>
-						<Form.Control
-							type='text'
-							placeholder='Enter first Name'
-							{...register('firstName', { required: true })}
-						/>
-						{errors.firstName && <p>first name is required.</p>}
-					</Form.Group>
-				</Col>
-				<Col>
-					<Form.Group className='mb-3' controlId='firstName'>
-						<Form.Label>last name</Form.Label>
-						<Form.Control
-							type='text'
-							placeholder='Enter last Name'
-							{...register('lastName', { required: true })}
-						/>
-					</Form.Group>
-				</Col>
-			</Row>
-			<Form.Group className='mb-3' controlId='email'>
-				<Form.Label>email</Form.Label>
-				<Form.Control
-					type='email'
-					placeholder='Enter email'
-					{...register('email', { required: true })}
-				/>
-			</Form.Group>
-			<Form.Group className='mb-3' controlId='username'>
-				<Form.Label>username</Form.Label>
-				<Form.Control
+		<form onSubmit={handleSubmit(onSubmit)}>
+			<div className='mb-3'>
+				<label for='firstName' className='form-label'>
+					first name
+				</label>
+				<input
 					type='text'
-					placeholder='Enter username'
+					className='form-control'
+					id='firstName'
+					{...register('firstName', { required: true })}
+				></input>
+			</div>
+			<div className='mb-3'>
+				<label for='lastName' className='form-label'>
+					last name
+				</label>
+				<input
+					type='text'
+					className='form-control'
+					id='lastName'
+					{...register('lastName', { required: true })}
+				></input>
+			</div>
+			<div className='mb-3'>
+				<label for='username' className='form-label'>
+					username
+				</label>
+				<input
+					type='text'
+					className='form-control'
+					id='username'
 					{...register('username', { required: true })}
-				/>
-			</Form.Group>
-			<Form.Group className='mb-3' controlId='password'>
-				<Form.Label>Password</Form.Label>
-				<Form.Control
-					type='password'
-					placeholder='Password'
-					{...register('password', { required: true })}
-				/>
-			</Form.Group>
-			<Form.Group className='mb-3' controlId='confirmPassword'>
-				<Form.Label>confirmPassword</Form.Label>
-				<Form.Control
-					type='password'
-					placeholder='Password'
-					{...register('confirmPassword', { required: true })}
-				/>
-				{errors.confirmPassword && <p>pssword do not match.</p>}
-			</Form.Group>
-			<Button variant='primary' type='submit'>
-				Submit
-			</Button>
-		</Form>
-	);
+				></input>
+			</div>
 
-	// todo: collect the rest
+			<div className='mb-3'>
+				<label for='email' className='form-label'>
+					Email address
+				</label>
+				<input
+					type='email'
+					className='form-control'
+					id='email'
+					{...register('email', { required: true })}
+				></input>
+			</div>
+
+			<div className='mb-3'>
+				<label for='password' className='form-label'>
+					Password
+				</label>
+				<input
+					type='password'
+					className='form-control'
+					id='password'
+					{...register('password', { required: true })}
+				></input>
+			</div>
+			<div className='mb-3'>
+				<label for='confirmPassword' className='form-label'>
+					Confirm Password
+				</label>
+				<input
+					type='password'
+					className='form-control'
+					id='confirmPassword'
+					{...register('confirmPassword', { required: true })}
+				></input>
+			</div>
+
+			<button type='submit' className='btn btn-primary'>
+				Submit
+			</button>
+		</form>
+	);
 };

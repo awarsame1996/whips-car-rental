@@ -9,6 +9,8 @@ import './App.css';
 import { Navbars } from './components/navBar';
 import { SignupForm } from './components/signupForm';
 import { HomePage } from './containers/homePage';
+import { LoginForm } from './components/loginForm';
+import { VehiclesPage } from './containers/vehiclesPage';
 
 // const httpLink = createHttpLink({
 // 	uri: process.env.GRAPHQL_URL || 'http://localhost:4000/',
@@ -24,7 +26,9 @@ export const App = () => {
 		<ApolloProvider client={client}>
 			<Navbars></Navbars>
 			{/* <SignupForm></SignupForm> */}
-			<HomePage></HomePage>
+			{/* <LoginForm></LoginForm> */}
+			<VehiclesPage></VehiclesPage>
+			{/* <HomePage></HomePage> */}
 		</ApolloProvider>
 	);
 };
