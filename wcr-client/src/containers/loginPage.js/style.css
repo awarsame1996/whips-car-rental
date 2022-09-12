@@ -26,6 +26,9 @@
 			transparent 100%
 		);
 }
+.vh-75 {
+	height: 90vh;
+}
 
 #radius-shape-1 {
 	height: 220px;

@@ -3,7 +3,7 @@ import React from 'react';
 import './style.css';
 import { VehicleCard } from '../../components/vehiclesPage/vehiclesCards';
 import { VehicleHero } from '../../components/vehiclesPage/hero';
-import { Canvas } from '../../components/vehiclesPage/Canvas';
+
 import { Sorter } from '../../components/vehiclesPage/sorting';
 
 export const VehiclesPage = () => {
