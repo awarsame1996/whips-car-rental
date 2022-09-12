@@ -1,8 +1,8 @@
 import {
-	ApolloClient,
-	ApolloProvider,
-	InMemoryCache,
-	createHttpLink,
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+  createHttpLink,
 } from '@apollo/client';
 
 import './App.css';
@@ -15,16 +15,16 @@ import { HomePage } from './containers/homePage';
 // });
 
 const client = new ApolloClient({
-	uri: process.env.GRAPHQL_URL || 'http://localhost:4000/',
-	cache: new InMemoryCache(),
+  uri: process.env.GRAPHQL_URL || 'http://localhost:4000/',
+  cache: new InMemoryCache(),
 });
 
 export const App = () => {
-	return (
-		<ApolloProvider client={client}>
-			<Navbars></Navbars>
-			{/* <SignupForm></SignupForm> */}
-			<HomePage></HomePage>
-		</ApolloProvider>
-	);
+  return (
+    <ApolloProvider client={client}>
+      <Navbars></Navbars>
+      {/* <SignupForm></SignupForm> */}
+      <HomePage></HomePage>
+    </ApolloProvider>
+  );
 };
