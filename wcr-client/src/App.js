@@ -12,6 +12,7 @@ import { HomePage } from './containers/homePage';
 import { LoginForm } from './components/loginForm';
 import { VehiclesPage } from './containers/vehiclesPage';
 import { SignupPage } from './containers/signupPage/signupPage';
+import { LoginPage } from './containers/loginPage.js/loginPage';
 
 // const httpLink = createHttpLink({
 // 	uri: process.env.GRAPHQL_URL || 'http://localhost:4000/',
@@ -26,8 +27,8 @@ export const App = () => {
 	return (
 		<ApolloProvider client={client}>
 			<Navbars></Navbars>
+			{/* <LoginPage></LoginPage> */}
 			<SignupPage></SignupPage>
-			{/* <LoginForm></LoginForm> */}
 			{/* <VehiclesPage></VehiclesPage> */}
 			{/* <HomePage></HomePage> */}
 		</ApolloProvider>

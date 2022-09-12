@@ -1,9 +1,9 @@
 import React from 'react';
+import { LoginForm } from '../../components/loginForm';
 
 import './style.css';
-import { SignupForm } from '../../components/signupForm';
 
-export const SignupPage = () => {
+export const LoginPage = () => {
 	return (
 		<section className='background-radial-gradient overflow-hidden'>
 			<div className='container px-4 py-5 px-md-5 text-center text-lg-start my-5'>
@@ -11,7 +11,7 @@ export const SignupPage = () => {
 					<div className='col-lg-6 mb-5 mb-lg-0 div-1'>
 						<h1 className='my-5 display-5 fw-bold ls-tight form-text'>
 							The best offer <br />
-							<span className='form-text'>Sign up</span>
+							<span className='form-text'>for your business</span>
 						</h1>
 						<p className='mb-4 opacity-70 form-text'>
 							Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -33,7 +33,7 @@ export const SignupPage = () => {
 
 						<div className='card bg-glass'>
 							<div className='card-body px-4 py-5 px-md-5'>
-								<SignupForm></SignupForm>
+								<LoginForm></LoginForm>
 							</div>
 						</div>
 					</div>
