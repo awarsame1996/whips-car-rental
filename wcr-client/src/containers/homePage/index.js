@@ -5,6 +5,7 @@ import AboutSection from '../../components/aboutSection';
 import contactSection from '../../components/contactSection';
 import AboutPage from '../../components/aboutPage';
 import './style.css';
+import CarModal from '../../components/carModal';
 
 export const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ export const HomePage = () => {
       <AboutSection></AboutSection>
       <contactSection></contactSection> */}
       {/* <AboutPage></AboutPage> */}
+      <CarModal></CarModal>
     </div>
   );
 };
