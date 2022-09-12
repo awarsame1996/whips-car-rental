@@ -1,8 +1,8 @@
 import {
-	ApolloClient,
-	ApolloProvider,
-	InMemoryCache,
-	createHttpLink,
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+  createHttpLink,
 } from '@apollo/client';
 
 import './App.css';
@@ -19,11 +19,12 @@ import { LoginPage } from './containers/loginPage.js/loginPage';
 // });
 
 const client = new ApolloClient({
-	uri: process.env.GRAPHQL_URL || 'http://localhost:4000/',
-	cache: new InMemoryCache(),
+  uri: process.env.GRAPHQL_URL || 'http://localhost:4000/',
+  cache: new InMemoryCache(),
 });
 
 export const App = () => {
+
 	return (
 		<ApolloProvider client={client}>
 			<Navbars></Navbars>
@@ -33,4 +34,5 @@ export const App = () => {
 			{/* <HomePage></HomePage> */}
 		</ApolloProvider>
 	);
+
 };
