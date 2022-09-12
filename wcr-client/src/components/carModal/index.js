@@ -53,9 +53,7 @@ const CarModal = () => {
 
         <div className=" border-sm-start-none border-start">
           <div className="payment-options">
-            <h5 className="mt-1 mb-2 border-sm-start-none border-bottom">
-              Your Payment Options
-            </h5>
+            <h5 className="mt-1 mb-2 ">Your Payment Options</h5>
             <div className=" ">
               <input
                 className="form-check-input mr-5"
