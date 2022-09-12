@@ -9,30 +9,28 @@ export const VehicleCard = (props) => {
 	};
 
 	return (
-		<div className='card w-75 m-3'>
-			<div className='card-body'>
-				<h5 className='card-title'>
+		<div className='card m-5 vehicle-card'>
+			<img
+				src='https://mdbcdn.b-cdn.net/img/new/slides/017.webp'
+				class='card-img'
+				alt='Stony Beach'
+			/>
+			<div class='card-img-overlay'>
+				<h5 class='card-title text-white'>
 					{car.make}, {car.model}
 				</h5>
-				<p className='card-text'>
+				<p className='card-text text-white'>
 					{car.seats} | {car.doors} | {car.transmission}
 				</p>
 			</div>
-			<img
-				src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp'
-				className='card-img-top'
-				alt='Fissure in Sandstone'
-			/>
-			<div className='card-body d-flex justify-content-between flex-row'>
-				<div>
-					<h5 className='card-title'>PRICE</h5>
-					<p className='card-text'>{car.price}</p>
-				</div>
-
-				<a className='btn btn-primary' onClick={redirectToWhateverCarPage}>
-					Button
-				</a>
+			<div className='mt-2 justify-content-center '>
+				<h5 className='card-title'>PRICE</h5>
+				<p className='card-text'>{car.price}</p>
 			</div>
+
+			<a className='btn btn-primary' onClick={redirectToWhateverCarPage}>
+				Button
+			</a>
 		</div>
 	);
 };

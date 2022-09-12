@@ -4,6 +4,7 @@ import './style.css';
 import { VehicleCard } from '../../components/vehiclesPage/vehiclesCards';
 import { VehicleHero } from '../../components/vehiclesPage/hero';
 import { Canvas } from '../../components/vehiclesPage/Canvas';
+import { Sorter } from '../../components/vehiclesPage/sorting';
 
 export const VehiclesPage = () => {
 	// use
@@ -37,10 +38,11 @@ export const VehiclesPage = () => {
 	// graph ql query to get car data
 
 	return (
-		<div className='container mt-4'>
+		<div>
 			{/* component one */}
-			<Canvas></Canvas>
-			<div className='border border-danger mt-1 d-flex justify-content-between flex-row'>
+			<VehicleHero></VehicleHero>
+			<Sorter></Sorter>
+			<div className='vh-60 mt-1 d-flex justify-content-center flex-row flex-wrap'>
 				{myArr.map((car) => {
 					return <VehicleCard car={car}> </VehicleCard>;
 				})}
