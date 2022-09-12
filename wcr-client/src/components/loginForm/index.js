@@ -1,11 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-// import { useMutation } from '@apollo/client';
-
-import Form from 'react-bootstrap/Form';
-
-import Button from 'react-bootstrap/Button';
-// import { LOGIN } from '../../mutations';
+import { useMutation } from '@apollo/client';
+import { LOGIN } from '../../mutations';
 
 export const LoginForm = () => {
 	const {
@@ -14,12 +10,20 @@ export const LoginForm = () => {
 		setError,
 		formState: { errors },
 	} = useForm();
+	const [login, { loading, error }] = useMutation(LOGIN, {
+		onCompleted: (data) => {
+			console.log(data);
+		},
+		onError: (error) => {
+			console.error(error);
+		},
+	});
 
-	const onSubmit = (formData) => {
+	const onSubmit = async (formData) => {
 		if (!formData.password || !formData.username) {
 			setError('password', {
 				type: 'manual',
-				message: 'missing username or password.',
+				message: 'fill in all fields',
 			});
 		} else {
 			const loginInput = {
@@ -27,31 +31,49 @@ export const LoginForm = () => {
 				password: formData.password,
 			};
 			console.log(loginInput);
+			try {
+				await login({
+					variables: {
+						loginInput,
+					},
+				});
+			} catch (error) {
+				console.error(error.message);
+			}
 		}
 	};
 	return (
-		<Form onSubmit={handleSubmit(onSubmit)}>
-			<Form.Group className='mb-3' controlId='username'>
-				<Form.Label>username</Form.Label>
-				<Form.Control
-					type='text'
-					placeholder='Enter username'
-					{...register('username', { required: true })}
-				/>
-				{errors.username && <p>username does not exist.</p>}
-			</Form.Group>
-			<Form.Group className='mb-3' controlId='password'>
-				<Form.Label>Password</Form.Label>
-				<Form.Control
+		<form onSubmit={handleSubmit(onSubmit)}>
+			<div className='mb-3'>
+				<label for='email' className='form-label'>
+					Email address
+				</label>
+				<input
+					type='email'
+					className='form-control'
+					id='email'
+					aria-describedby='emailHelp'
+					{...register('email', { required: true })}
+				></input>
+				<div id='emailHelp' className='form-text'>
+					We'll never share your email with anyone else.
+				</div>
+			</div>
+			<div className='mb-3'>
+				<label for='password' className='form-label'>
+					Password
+				</label>
+				<input
 					type='password'
-					placeholder='Password'
+					className='form-control'
+					id='password'
 					{...register('password', { required: true })}
-				/>
-				{errors.password && <p>password is incorrect.</p>}
-			</Form.Group>
-			<Button variant='primary' type='submit'>
+				></input>
+			</div>
+
+			<button type='submit' className='btn btn-primary'>
 				Submit
-			</Button>
-		</Form>
+			</button>
+		</form>
 	);
 };
