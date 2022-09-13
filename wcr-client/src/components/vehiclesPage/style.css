@@ -1,12 +1,52 @@
 .vehicle-image {
-	background-image: url('https://images.unsplash.com/photo-1548343361-02248be15911?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
-	width: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-color: rgba(0, 0, 0, 0.6);
+  background-image: url('https://images.unsplash.com/photo-1548343361-02248be15911?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .vehicle-card {
-	height: 300px;
-	width: 400px;
+  height: 507px;
+  width: 300px;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 2px;
+
+  border-color: rgb(200, 156, 196);
+}
+.options-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.btn-group {
+  margin-left: 2rem;
+
+  border-radius: 5px;
+  border-width: 1px;
+  width: 12rem;
+
+  background-color: rgba(110, 40, 176, 0.483);
+}
+.Vehicle-card-btn {
+  background-color: rgba(110, 40, 176, 0.483);
+}
+.card-headr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(110, 40, 176, 0.483);
+}
+.card-descrption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.pricing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(247 247 247);
+  width: 297px;
 }
