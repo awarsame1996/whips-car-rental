@@ -7,7 +7,7 @@
 }
 
 .vehicle-card {
-  height: 507px;
+  height: 487px;
   width: 300px;
   border-style: solid;
   border-radius: 5px;
@@ -37,6 +37,9 @@
   flex-direction: column;
   justify-content: center;
   background-color: rgba(110, 40, 176, 0.483);
+  margin: 1px;
+  margin-top: 2px;
+  border-radius: 3px;
 }
 .card-descrption {
   display: flex;

@@ -10,7 +10,7 @@ export const VehicleCard = (props) => {
 
   return (
     <div className="card  m-5 vehicle-card">
-      <div className="card-headr align-items-center">
+      <div className="card-headr  align-items-center">
         {' '}
         <h5 class="">
           {car.make}, {car.model}
@@ -25,24 +25,24 @@ export const VehicleCard = (props) => {
         alt="Stony Beach"
       />
 
-      <div className="mt-3 mb-2 card-descrption  align-items-center ">
+      <div className="mt-4  card-descrption  align-items-center ">
         <div className="pricing align-items-center">
-          <h5 className="card-title">Price: £{car.price}</h5>
-          <h5>
-            Discounted price: <s>£1600.00</s>
-          </h5>
+          <h5 className="card-title mt-1">Price: £{car.price}</h5>
+          <h6 className="text-muted">Incl. 450 miles</h6>
         </div>
-        <h7 className="mt-4">Brand:</h7>
-        <h7 className="mt-2">Deposit: £500</h7>
-        <h7 className="mt-2">Insurance: Comperhensive</h7>
-        <h7 className="mt-2">Incl. 450 miles</h7>
+
+        <h7 className="mt-4 text-muted">Deposit: £500</h7>
+        <h7 className="mt-2 text-muted">Insurance: Comprehensive</h7>
+        <h7 className="mt-3 text-muted booking-text ">
+          Click Here To Book Now:
+        </h7>
       </div>
 
       <a
         className="btn Vehicle-card-btn m-1"
         onClick={redirectToWhateverCarPage}
       >
-        Button
+        BOOK
       </a>
     </div>
   );
