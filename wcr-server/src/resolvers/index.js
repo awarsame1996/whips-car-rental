@@ -1,11 +1,12 @@
 const login = require('./login');
 const signup = require('./signup');
 const cars = require('./cars');
+const car = require('./car');
 
 const resolvers = {
 	Query: {
 		cars,
-		// car,
+		car,
 		// bookings,
 		// booking,
 	},

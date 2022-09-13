@@ -1,30 +1,45 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
-export const ADDRESS_LOOKUP = gql`
-  query Query($postcode: String!) {
-    addressLookup(postcode: $postcode) {
-      postcode
-      latitude
-      longitude
-      addresses {
-        formatted_address
-        thoroughfare
-        building_name
-        sub_building_name
-        sub_building_number
-        building_number
-        line_1
-        line_2
-        line_3
-        line_4
-        locality
-        town_or_city
-        county
-        district
-        country
-        _id
-        fullAddress
-      }
-    }
-  }
+export const ALL_CARS = gql`
+	query Query {
+		cars {
+			id
+			model
+			imageUrl
+			dailyPrice
+			weeklyPrice
+			make
+			specifications {
+				seats
+				doors
+				transmission
+				suitCases
+				ac
+				satNav
+				similiar
+			}
+		}
+	}
+`;
+
+export const SINGLE_CAR = gql`
+	query Query($carId: ID!) {
+		car(carId: $carId) {
+			_id
+			make
+			model
+			imageUrl
+			dailyPrice
+			weeklyPrice
+			specifications {
+				seats
+				doors
+				transmission
+				suitCases
+				ac
+				satNav
+				similiar
+			}
+		}
+	}
 `;

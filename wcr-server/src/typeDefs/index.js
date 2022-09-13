@@ -11,7 +11,7 @@ const typeDefs = gql`
 		similiar: String
 	}
 	type User {
-		id: ID!
+		_id: ID!
 		firstName: String!
 		lastName: String!
 		email: String!
@@ -46,7 +46,7 @@ const typeDefs = gql`
 		car: Car
 	}
 	type Car {
-		id: ID!
+		_id: ID!
 		make: String!
 		model: String!
 		imageUrl: String!
