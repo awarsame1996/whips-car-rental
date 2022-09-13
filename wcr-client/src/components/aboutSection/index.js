@@ -8,7 +8,9 @@ const AboutSection = () => {
           src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FyJTIwcmVudGFsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
           className="about-image"
         />
-        <div className="bannr-text">About</div>
+        <div className="bannr-text">
+          <h1 className="centered-text">About</h1>
+        </div>
       </div>
 
       <div className="about-text col-md-5    text-center">

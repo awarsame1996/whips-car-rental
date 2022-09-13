@@ -15,7 +15,7 @@ const IntroSection = () => {
 
         <div className="car-imge">
           <img
-            src="https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+            src="https://media1.giphy.com/media/hWLML4ri0j9JtDfVbk/giphy.gif?cid=790b7611c3773c42f8bb912b92f463ea8b8a02f3a5cd8922&rid=giphy.gif&ct=g"
             className="car-imge"
           />
         </div>

@@ -56,6 +56,9 @@
 
 .about-image-container {
   margin-top: 5rem;
+  position: relative;
+  text-align: center;
+  color: white;
 }
 .about-text {
   display: flex;
@@ -83,7 +86,7 @@
 
 .dashboard-image {
   width: 90vw;
-  height: 555px;
+  height: 400px;
   object-fit: cover;
   object-position: 50% 50%;
   position: relative;
@@ -110,9 +113,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 4rem;
+  font-size: 8rem;
   color: white;
 }
 .footer-text {
   margin-top: 8rem;
+}
+.centered-text {
+  font-size: 6rem;
 }
