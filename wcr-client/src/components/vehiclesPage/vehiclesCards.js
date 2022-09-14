@@ -31,9 +31,9 @@ export const VehicleCard = (props) => {
           <h6 className="text-muted">Incl. 450 miles</h6>
         </div>
 
-        <h7 className="mt-4 text-muted">Deposit: £500</h7>
-        <h7 className="mt-2 text-muted">Insurance: Comprehensive</h7>
-        <h7 className="mt-3 text-muted booking-text ">
+        <h7 className="mt-4">Deposit: £500</h7>
+        <h7 className="mt-2">Insurance: Comprehensive</h7>
+        <h7 className="mt-4 text-muted booking-text ">
           Click Here To Book Now:
         </h7>
       </div>

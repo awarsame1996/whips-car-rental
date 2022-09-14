@@ -56,8 +56,8 @@ export const VehiclesPage = () => {
           return <VehicleCard car={car}> </VehicleCard>;
         })}
       </div>
-      <div className="vh-40 border border-danger mt-1"></div>
-      <div className="vh-40 border border-danger mt-1"></div>
+
+      <div></div>
     </div>
   );
 };
