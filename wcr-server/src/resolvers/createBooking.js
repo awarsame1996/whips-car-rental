@@ -5,14 +5,8 @@ const { Car, User, Booking } = require('../models');
 const createBooking = async (_, { createBookingInput }, { user }) => {
 	try {
 		if (user) {
-			const {
-				startDate,
-				endDate,
-				pickupLocation,
-				isDaily,
-				isWeekly,
-				carId,
-			} = createBookingInput;
+			const { startDate, endDate, isDaily, isWeekly, carId } =
+				createBookingInput;
 
 			const car = await Car.findById(carId);
 
