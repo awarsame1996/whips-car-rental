@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const Navbars = () => {
-
 	return (
 		<nav className='navbar navbar-expand-lg navbar-dark bg-dark bg-light'>
 			<div className='container-fluid'>
@@ -21,14 +20,14 @@ export const Navbars = () => {
 				</button>
 				<div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
 					<div className='navbar-nav'>
-						<a className='nav-link active' aria-current='page' href='#'>
+						<a className='nav-link active' aria-current='page' href='/'>
 							Home
 						</a>
-						<a className='nav-link' href='#'>
-							Features
+						<a className='nav-link' href='/vehicles'>
+							Vehicles
 						</a>
-						<a className='nav-link' href='#'>
-							Pricing
+						<a className='nav-link' href='/about'>
+							About
 						</a>
 						<a className='nav-link disabled'>Disabled</a>
 					</div>
@@ -36,5 +35,4 @@ export const Navbars = () => {
 			</div>
 		</nav>
 	);
-
 };

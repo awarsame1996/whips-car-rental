@@ -1,8 +1,17 @@
 const { gql } = require('apollo-server');
 
 const typeDefs = gql`
+	type Specifications {
+		seats: Int
+		doors: Int
+		transmission: String
+		suitCases: Int
+		ac: Boolean
+		satNav: Boolean
+		similiar: String
+	}
 	type User {
-		id: ID!
+		_id: ID!
 		firstName: String!
 		lastName: String!
 		email: String!
@@ -37,12 +46,13 @@ const typeDefs = gql`
 		car: Car
 	}
 	type Car {
-		id: ID!
+		_id: ID!
+		make: String!
 		model: String!
-		brand: String!
 		imageUrl: String!
 		dailyPrice: String!
 		weeklyPrice: String!
+		specifications: Specifications
 	}
 	type Query {
 		cars: [Car]

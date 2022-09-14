@@ -1,14 +1,16 @@
 const { Schema, model } = require('mongoose');
 
+const specificationsSchema = require('./Specifications.js');
+
 const carSchema = {
-	model: {
+	make: {
 		type: String,
 		required: true,
 		minLength: 1,
 		maxLength: 30,
 		trim: true,
 	},
-	brand: {
+	model: {
 		type: String,
 		required: true,
 		minLength: 1,
@@ -29,6 +31,7 @@ const carSchema = {
 		type: Number,
 		required: true,
 	},
+	specifications: specificationsSchema,
 };
 const options = {
 	toJSON: {

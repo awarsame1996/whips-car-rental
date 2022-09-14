@@ -1,12 +1,12 @@
 const connectToDatabase = require('../config/connection');
 const { User, Car, Booking } = require('../models');
-// const { seedCars } = require('./cars');
+const { seedCars } = require('./cars');
 const { seedUsers } = require('./users');
 // const { seedBookings } = require('./bookings');
 
 const clearCollections = async () => {
 	await User.deleteMany({});
-	// await Car.deleteMany({});
+	await Car.deleteMany({});
 	// await Booking.deleteMany({});
 };
 
@@ -22,7 +22,7 @@ const init = async () => {
 		await seedUsers();
 
 		// // seed Cars
-		// await seedCars();
+		await seedCars();
 
 		// // seed bookings
 		// await seedBookings();

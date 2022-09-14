@@ -1,8 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useMutation } from '@apollo/client';
-
-import { SIGNUP } from '../../mutations';
+import { SIGNUP } from '../../graphql/mutations';
 
 export const SignupForm = () => {
 	const {

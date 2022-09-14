@@ -11,9 +11,12 @@ import { SignupForm } from './components/signupForm';
 import { HomePage } from './containers/homePage';
 import { LoginForm } from './components/loginForm';
 import { VehiclesPage } from './containers/vehiclesPage';
-import { SignupPage } from './containers/signupPage/signupPage';
-import { LoginPage } from './containers/loginPage.js/loginPage';
+import { SignupPage } from './containers/signupPage';
+import { LoginPage } from './containers/loginPage';
 import { AboutPage } from './containers/aboutPage';
+import { AppProvider } from './context/AppProvider';
+import { BrowserRouter } from 'react-router-dom';
+import { AppRoutes } from './AppRoutes';
 
 // const httpLink = createHttpLink({
 // 	uri: process.env.GRAPHQL_URL || 'http://localhost:4000/',
@@ -27,12 +30,12 @@ const client = new ApolloClient({
 export const App = () => {
 	return (
 		<ApolloProvider client={client}>
-			<Navbars></Navbars>
-			{/* <LoginPage></LoginPage> */}
-			{/* <SignupPage></SignupPage> */}
-			{/* <VehiclesPage></VehiclesPage> */}
-			<HomePage></HomePage>
-			{/* <AboutPage></AboutPage> */}
+			<BrowserRouter>
+				<AppProvider>
+					<Navbars></Navbars>
+					<AppRoutes />
+				</AppProvider>
+			</BrowserRouter>
 		</ApolloProvider>
 	);
 };
