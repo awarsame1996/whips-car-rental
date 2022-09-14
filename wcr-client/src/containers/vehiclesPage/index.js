@@ -18,6 +18,7 @@ export const VehiclesPage = () => {
 
 	if (data) {
 		console.log(data);
+
 		return (
 			<div>
 				{/* component one */}

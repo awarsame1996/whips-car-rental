@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { AboutPage } from './containers/aboutPage';
 import { HomePage } from './containers/homePage';
 import { LoginPage } from './containers/loginPage';
@@ -9,20 +9,21 @@ import { useAuth } from './context/AppProvider';
 
 export const AppRoutes = () => {
 	const { isLoggedIn } = useAuth();
-
+	console.log(isLoggedIn);
 	return (
 		<Routes>
-			{isLoggedIn && <></>}
+			{!isLoggedIn && <Route path='/login' element={<LoginPage />} />}
+			{!isLoggedIn && <Route path='/sign-up' element={<SignupPage />} />}
+			{/* <Route path='/vehicles' element={<VehiclesPage />} /> */}
+			<Route
+				path='/vehicles'
+				element={isLoggedIn ? <VehiclesPage /> : <LoginPage />}
+			/>
+			{/* <Navigate to={isLoggedIn ? '/vehicles' : '/login'} /> */}
+			<Route path='/' element={<HomePage />} />
+			<Route path='/about' element={<AboutPage />} />
 
-			{!isLoggedIn && (
-				<>
-					<Route path='/vehicles' element={<VehiclesPage />} />
-					<Route path='/' element={<HomePage />} />
-					<Route path='/about' element={<AboutPage />} />
-					<Route path='/login' element={<LoginPage />} />
-					<Route path='/sign-up' element={<SignupPage />} />
-				</>
-			)}
+			<Route path='/modal' element={<SignupPage />} />
 		</Routes>
 	);
 };

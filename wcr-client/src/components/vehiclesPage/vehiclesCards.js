@@ -1,4 +1,5 @@
 import React from 'react';
+import { CarModal } from '../carModal';
 
 export const VehicleCard = (props) => {
 	const { car } = props;
@@ -10,6 +11,7 @@ export const VehicleCard = (props) => {
 
 	return (
 		<div className='card  m-5 vehicle-card'>
+			{/* not mispell */}
 			<div className='card-headr align-items-center'>
 				{' '}
 				<h5 class=''>
@@ -35,12 +37,13 @@ export const VehicleCard = (props) => {
 				<h7 className='mt-2'>Incl. 450 miles</h7>
 			</div>
 
-			<a
+			{/* <a
 				className='btn Vehicle-card-btn m-1'
 				onClick={redirectToWhateverCarPage}
 			>
 				Button
-			</a>
+			</a> */}
+			<CarModal car={car}></CarModal>
 		</div>
 	);
 };
