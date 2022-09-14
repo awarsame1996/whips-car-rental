@@ -65,4 +65,5 @@ export const VehicleCard = (props) => {
 			<TestModal></TestModal>
 		</div>
 	);
+
 };

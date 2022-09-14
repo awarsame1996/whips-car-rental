@@ -5,6 +5,7 @@ import { VehicleCard } from '../../components/vehiclesPage/vehiclesCards';
 import { VehicleHero } from '../../components/vehiclesPage/hero';
 
 import { Sorter } from '../../components/vehiclesPage/sorting';
+
 import { useQuery } from '@apollo/client';
 import { ALL_CARS } from '../../graphql/queries';
 
@@ -36,4 +37,5 @@ export const VehiclesPage = () => {
 		);
 	}
 	// graph ql query to get car data
+
 };
