@@ -24,6 +24,7 @@ export const VehiclesPage = () => {
 				{/* component one */}
 				<VehicleHero></VehicleHero>
 				<Sorter></Sorter>
+				{/* */}
 				<div className='vh-60 mt-1 d-flex justify-content-center flex-row flex-wrap'>
 					{data.cars.map((car) => {
 						return <VehicleCard car={car}> </VehicleCard>;

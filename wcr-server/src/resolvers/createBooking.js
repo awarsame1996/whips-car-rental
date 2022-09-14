@@ -41,22 +41,21 @@ const createBooking = async (_, { createBookingInput }, { user }) => {
 			const newBooking = await Booking.create({
 				startDate,
 				endDate,
-				pickupLocation,
 				isDaily,
 				isWeekly,
 				totalCost,
 				car: carId,
 			});
 
-			const bookingId = newBooking.get('_id');
-
-			await User.findByIdAndUpdate(user.id, {
+			await User.findByIdAndUpdate(user._id, {
 				$push: {
-					bookings: bookingId,
+					bookings: newBooking._id,
 				},
 			});
 
-			const booking = await Booking.findById(bookingId).populate('Car');
+			const booking = await Booking.findById(newBooking._id).populate(
+				'car'
+			);
 
 			return booking;
 		} else {
@@ -65,7 +64,7 @@ const createBooking = async (_, { createBookingInput }, { user }) => {
 	} catch (error) {
 		console.log(`[ERROR]: Failed to create booking | ${error.message}`);
 
-		throw new ApolloError('Failed to create booking');
+		throw new ApolloError(error);
 	}
 };
 

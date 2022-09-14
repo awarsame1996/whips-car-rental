@@ -44,7 +44,7 @@ const typeDefs = gql`
 		carId: ID!
 	}
 	type Booking {
-		id: ID!
+		_id: ID!
 		startDate: String!
 		endDate: String!
 		isDaily: Boolean!

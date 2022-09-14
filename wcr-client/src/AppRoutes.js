@@ -15,15 +15,15 @@ export const AppRoutes = () => {
 			{!isLoggedIn && <Route path='/login' element={<LoginPage />} />}
 			{!isLoggedIn && <Route path='/sign-up' element={<SignupPage />} />}
 			{/* <Route path='/vehicles' element={<VehiclesPage />} /> */}
+
 			<Route
 				path='/vehicles'
-				element={isLoggedIn ? <VehiclesPage /> : <LoginPage />}
+				element={!isLoggedIn ? <VehiclesPage /> : <Navigate to='/' />}
 			/>
-			{/* <Navigate to={isLoggedIn ? '/vehicles' : '/login'} /> */}
-			<Route path='/' element={<HomePage />} />
 			<Route path='/about' element={<AboutPage />} />
 
 			<Route path='/modal' element={<SignupPage />} />
+			<Route path='/' element={<HomePage />} />
 		</Routes>
 	);
 };

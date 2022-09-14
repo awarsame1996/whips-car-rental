@@ -1,5 +1,6 @@
 import React from 'react';
 import { CarModal } from '../carModal';
+import { TestModal } from '../test-modal';
 
 export const VehicleCard = (props) => {
 	const { car } = props;
@@ -8,6 +9,23 @@ export const VehicleCard = (props) => {
 		// take you to the  specific car page
 		console.log('something');
 	};
+
+	const generateRandomID = () => {
+		const characters =
+			'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+		let output = '';
+
+		for (let i = 0; i < 8; i++) {
+			output += characters.charAt(
+				Math.floor(Math.random() * characters.length)
+			);
+		}
+
+		return output;
+	};
+
+	const carID = generateRandomID();
 
 	return (
 		<div className='card  m-5 vehicle-card'>
@@ -43,7 +61,8 @@ export const VehicleCard = (props) => {
 			>
 				Button
 			</a> */}
-			<CarModal car={car}></CarModal>
+			{/* <CarModal car={car} id={carID}></CarModal> */}
+			<TestModal></TestModal>
 		</div>
 	);
 };

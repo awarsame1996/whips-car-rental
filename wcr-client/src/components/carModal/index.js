@@ -1,21 +1,21 @@
 import React from 'react';
 import './index.css';
 
-export const CarModal = ({ car }) => {
+export const CarModal = ({ car, id }) => {
 	return (
-		<div>
+		<div key={car.make}>
 			<button
 				type='button'
 				className='btn btn-primary'
 				data-bs-toggle='modal'
-				data-bs-target={`#${car.make}-${car.model}`}
+				data-bs-target={`#carModal`}
 			>
 				Book Now
 			</button>
 
 			<div
 				className='modal-body modal fade'
-				id={`${car.make}-${car.model}`}
+				id={`carModal`}
 				tabIndex='-1'
 				aria-hidden='false'
 			>
