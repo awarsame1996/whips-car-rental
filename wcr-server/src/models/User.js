@@ -38,6 +38,7 @@ const userSchema = {
 		maxLength: 50,
 		trim: true,
 	},
+	bookings: { type: Schema.Types.ObjectId, ref: 'Booking' },
 };
 const options = {
 	toJSON: {

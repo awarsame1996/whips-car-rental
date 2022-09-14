@@ -3,7 +3,7 @@ import { gql } from '@apollo/client';
 export const ALL_CARS = gql`
 	query Query {
 		cars {
-			id
+			_id
 			model
 			imageUrl
 			dailyPrice

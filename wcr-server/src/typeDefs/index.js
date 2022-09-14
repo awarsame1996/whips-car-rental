@@ -36,8 +36,15 @@ const typeDefs = gql`
 		password: String!
 		username: String!
 	}
+	input CreateBookingInput {
+		startDate: String!
+		endDate: String!
+		isDaily: Boolean!
+		isWeekly: Boolean!
+		carId: ID!
+	}
 	type Booking {
-		id: ID!
+		_id: ID!
 		startDate: String!
 		endDate: String!
 		isDaily: Boolean!
@@ -64,6 +71,7 @@ const typeDefs = gql`
 	type Mutation {
 		login(loginInput: LoginInput!): LoginSuccess
 		signup(signupInput: SignupInput!): SignupSuccess
+		createBooking(createBookingInput: CreateBookingInput!): Booking
 	}
 `;
 
