@@ -6,9 +6,5 @@ import { TestCard } from '../../components/test-modal/testCar';
 // import './style.css';
 
 export const AboutPage = () => {
-  return (
-    <div>
-      <TestCard></TestCard>
-    </div>
-  );
+	return <div>hello</div>;
 };

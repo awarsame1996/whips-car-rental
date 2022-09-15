@@ -40,7 +40,7 @@ const login = async (_, { loginInput }) => {
 	} catch (error) {
 		console.log(`[ERROR]: Failed to login | ${error.message}`);
 
-		throw new ApolloError('Failed to login');
+		throw new ApolloError(error.message);
 	}
 };
 

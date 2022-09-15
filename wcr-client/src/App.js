@@ -4,6 +4,7 @@ import {
 	InMemoryCache,
 	createHttpLink,
 } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
 import './App.css';
 import { Navbars } from './components/navBar';
@@ -18,12 +19,23 @@ import { AppProvider } from './context/AppProvider';
 import { BrowserRouter } from 'react-router-dom';
 import { AppRoutes } from './AppRoutes';
 
-// const httpLink = createHttpLink({
-// 	uri: process.env.GRAPHQL_URL || 'http://localhost:4000/',
-// });
+const httpLink = createHttpLink({
+	uri: process.env.GRAPHQL_URL || 'http://localhost:4000/',
+});
+
+const authLink = setContext((_, { headers }) => {
+	const user = JSON.parse(localStorage.getItem('user'));
+
+	return {
+		headers: {
+			...headers,
+			authorization: user ? `Bearer ${user.token}` : '',
+		},
+	};
+});
 
 const client = new ApolloClient({
-	uri: process.env.GRAPHQL_URL || 'http://localhost:4000/',
+	link: authLink.concat(httpLink),
 	cache: new InMemoryCache(),
 });
 

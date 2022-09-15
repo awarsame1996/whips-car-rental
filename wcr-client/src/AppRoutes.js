@@ -19,7 +19,7 @@ export const AppRoutes = () => {
 
 			<Route
 				path='/vehicles'
-				element={!isLoggedIn ? <VehiclesPage /> : <Navigate to='/' />}
+				element={isLoggedIn ? <VehiclesPage /> : <Navigate to='/' />}
 			/>
 			<Route path='/about' element={<AboutPage />} />
 			<Route path='/modal' element={<TestModal />} />

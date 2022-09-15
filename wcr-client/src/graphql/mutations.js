@@ -14,13 +14,10 @@ export const LOGIN = gql`
 			success
 			token
 			user {
-				id
 				firstName
 				lastName
 				email
 				username
-				password
-				s
 			}
 		}
 	}
