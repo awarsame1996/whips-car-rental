@@ -39,3 +39,54 @@
 .car-img {
   height: 30rem;
 }
+.card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(110, 40, 176, 0.483);
+  margin: 3px;
+  margin-top: 2px;
+  border-radius: 3px;
+  height: 4rem;
+}
+.modal-btn {
+  background-color: white;
+  margin: 3px;
+  border-radius: 8px;
+  color: rgba(75, 12, 134, 0.957);
+}
+.btn {
+  background-color: rgba(110, 40, 176, 0.483);
+  margin: 3px;
+  border-radius: 8px;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(247 247 247);
+}
+.card-info {
+  display: flex;
+  flex-direction: column;
+}
+.card-image {
+  background-size: contain;
+}
+.car-img {
+  height: 30rem;
+}
+.sort-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.options-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.vehicle-image {
+  background-image: url('https://images.unsplash.com/photo-1506269996138-4c6d92fbd8a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1750&q=80');
+}
