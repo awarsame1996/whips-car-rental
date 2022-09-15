@@ -8,17 +8,8 @@
 	margin-left: 1rem;
 	margin-bottom: 5px;
 }
-.modal-body {
-	border-style: solid;
-	border-radius: 5px;
-	border-width: 2px;
-	width: 50rem;
+.car-modal {
 	border-color: rgb(91, 72, 89);
-
-	margin: 2rem;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
 }
 .car-image {
 	text-align: center;
@@ -47,4 +38,7 @@
 }
 .duration-checklist {
 	margin-left: 5px;
+}
+.tester-image {
+	background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');
 }

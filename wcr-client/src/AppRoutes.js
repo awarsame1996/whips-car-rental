@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { TestModal } from './components/test-modal';
 import { AboutPage } from './containers/aboutPage';
 import { HomePage } from './containers/homePage';
 import { LoginPage } from './containers/loginPage';
@@ -21,8 +22,8 @@ export const AppRoutes = () => {
 				element={!isLoggedIn ? <VehiclesPage /> : <Navigate to='/' />}
 			/>
 			<Route path='/about' element={<AboutPage />} />
+			<Route path='/modal' element={<TestModal />} />
 
-			<Route path='/modal' element={<SignupPage />} />
 			<Route path='/' element={<HomePage />} />
 		</Routes>
 	);
