@@ -1,9 +1,14 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useMutation } from '@apollo/client';
+import { useNavigate } from 'react-router-dom';
+
 import { LOGIN } from '../../graphql/mutations';
+import AuthService from '../../utils/auth';
 
 export const LoginForm = () => {
+	const navigate = useNavigate();
+
 	const {
 		register,
 		handleSubmit,
@@ -12,7 +17,18 @@ export const LoginForm = () => {
 	} = useForm();
 	const [login, { loading, error }] = useMutation(LOGIN, {
 		onCompleted: (data) => {
-			console.log(data);
+			const payload = {
+				token: data.login.token,
+				firstName: data.login.user.firstName,
+				lastName: data.login.user.lastName,
+				email: data.login.user.email,
+			};
+
+			localStorage.setItem('user', JSON.stringify(payload));
+
+			navigate('/');
+			const { token } = data.login;
+			AuthService.login(token);
 		},
 		onError: (error) => {
 			console.error(error);
@@ -20,14 +36,15 @@ export const LoginForm = () => {
 	});
 
 	const onSubmit = async (formData) => {
-		if (!formData.password || !formData.username) {
+		console.log(formData.password, formData.email);
+		if (!formData.password || !formData.email) {
 			setError('password', {
 				type: 'manual',
 				message: 'fill in all fields',
 			});
 		} else {
 			const loginInput = {
-				username: formData.username,
+				email: formData.email,
 				password: formData.password,
 			};
 			console.log(loginInput);

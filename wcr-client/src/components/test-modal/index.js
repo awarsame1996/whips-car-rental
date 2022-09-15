@@ -1,4 +1,3 @@
-
 import './index.css';
 import { useForm } from 'react-hook-form';
 import { useMutation } from '@apollo/client';
@@ -23,6 +22,8 @@ export const TestModal = ({ car, id }) => {
 		formState: { errors },
 	} = useForm();
 
+	let checkboxesEmpty = false;
+
 	const onSubmit = async (formData) => {
 		const { isDailyCheckBox, isWeeklyCheckBox, startDate, endDate } =
 			formData;
@@ -36,30 +37,27 @@ export const TestModal = ({ car, id }) => {
 		}
 
 		if (!isWeeklyCheckBox && !isDailyCheckBox) {
-			setError('isWeeklyCheckBox', {
-				type: 'manual',
-				message: 'you need to select one of the checkboxes',
-			});
+			checkboxesEmpty = true;
 		}
-		if (!startDate) {
-			setError('startDate', {
-				type: 'manual',
-				message: 'start date is required',
-			});
-		}
-		if (!endDate) {
-			setError('isWeeklyCheckBox', {
-				type: 'manual',
-				message: 'end date is required',
-			});
-		}
+		// if (!startDate) {
+		// 	setError('startDate', {
+		// 		type: 'manual',
+		// 		message: 'start date is required',
+		// 	});
+		// }
+		// if (!endDate) {
+		// 	setError('isWeeklyCheckBox', {
+		// 		type: 'manual',
+		// 		message: 'end date is required',
+		// 	});
+		// }
 
 		const createBookingInput = {
 			isDaily,
 			isWeekly,
 			startDate,
 			endDate,
-			car: _id,
+			carId: _id,
 		};
 
 		console.log(createBookingInput);
@@ -68,6 +66,7 @@ export const TestModal = ({ car, id }) => {
 				variables: {
 					createBookingInput,
 				},
+				header: {},
 			});
 		} catch (error) {
 			console.error(error.message);
@@ -83,7 +82,7 @@ export const TestModal = ({ car, id }) => {
 				data-mdb-toggle='modal'
 				data-mdb-target={`#${id}`}
 			>
-				Launch demo modal
+				View more
 			</button>
 
 			{/* <!-- Modal --> */}
@@ -129,7 +128,7 @@ export const TestModal = ({ car, id }) => {
 											name='flexRadioDefault'
 											{...register('isDailyCheckBox')}
 										></input>
-										{errors.isDailyCheckBox && (
+										{errors?.isDailyCheckBox && (
 											<p>{errors.isDailyCheckBox.message}</p>
 										)}
 
@@ -145,15 +144,14 @@ export const TestModal = ({ car, id }) => {
 											name='flexRadioDefault'
 											{...register('isWeeklyCheckBox')}
 										></input>
-										{errors.isWeeklyCheckBox && (
-											<p>{errors.isWeeklyCheckBox.message}</p>
-										)}
+										{checkboxesEmpty && <p>Checkboxes are empty</p>}
 
 										<label className='duration-checklist '>Weekly</label>
 										<p className='text-muted small mb-3'>
 											choose to book weekly
 										</p>
 									</div>
+
 									<div className='border-sm-start-none border-bottom mt-3'>
 										<div className='form-floating mb-3'>
 											<input
@@ -163,8 +161,8 @@ export const TestModal = ({ car, id }) => {
 												min='{{currentDate}}'
 												{...register('startDate', { required: true })}
 											/>
-											{errors.startDate && (
-												<p>{errors.startDate.message}</p>
+											{errors?.startDate && (
+												<p>Please input a start date</p>
 											)}
 											<label for='startDate'>Booking start date</label>
 										</div>
@@ -202,5 +200,4 @@ export const TestModal = ({ car, id }) => {
 			</div>
 		</div>
 	);
-
 };
