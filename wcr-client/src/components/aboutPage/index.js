@@ -18,7 +18,7 @@ export const About = () => {
           </h5>
           <p className="mt-4 mb-5">
             Our Small Business was founded in 2000, and has been bringing a wide
-            selection of best-in-class rentals to our customers ever since. Our
+            selection of best-in-class rental's to our customers ever since. Our
             business name has become synonymous with high-quality and excellent
             service throughout the San Francisco area.
           </p>
