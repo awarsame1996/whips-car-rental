@@ -25,3 +25,19 @@ export const LOGIN = gql`
 		}
 	}
 `;
+
+export const BOOKING = gql`
+	mutation CreateBooking($createBookingInput: CreateBookingInput!) {
+		createBooking(createBookingInput: $createBookingInput) {
+			_id
+			startDate
+			endDate
+			isDaily
+			isWeekly
+			totalCost
+			car {
+				_id
+			}
+		}
+	}
+`;

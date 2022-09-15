@@ -96,7 +96,7 @@ export const SignupForm = () => {
 					type='text'
 					className='form-control'
 					id='username'
-					{...register('username', { required: true })}
+					{...register('username', { required: false })}
 				></input>
 			</div>
 
@@ -108,7 +108,7 @@ export const SignupForm = () => {
 					type='email'
 					className='form-control'
 					id='email'
-					{...register('email', { required: true })}
+					{...register('email', { required: false })}
 				></input>
 			</div>
 
