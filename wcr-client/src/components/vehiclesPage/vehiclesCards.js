@@ -62,8 +62,7 @@ export const VehicleCard = (props) => {
 				Button
 			</a> */}
 			{/* <CarModal car={car} id={carID}></CarModal> */}
-			<TestModal></TestModal>
+			<TestModal id={carID} car={car}></TestModal>
 		</div>
 	);
-
 };

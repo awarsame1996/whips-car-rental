@@ -8,7 +8,7 @@ const typeDefs = gql`
 		suitCases: Int
 		ac: Boolean
 		satNav: Boolean
-		similiar: String
+		similar: String
 	}
 	type User {
 		_id: ID!

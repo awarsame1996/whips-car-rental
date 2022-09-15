@@ -15,7 +15,7 @@ const cars = [
 			suitCases: 2,
 			ac: true,
 			satNav: true,
-			similiar: 'Audi Q5 Aut. or Similar | Premium SUV',
+			similar: 'Audi Q5 Aut. or Similar | Premium SUV',
 		},
 	},
 	{
@@ -32,7 +32,7 @@ const cars = [
 			suitCases: 1,
 			ac: true,
 			satNav: true,
-			similiar: 'BMW X3 Aut. or Similar | Premium SUV',
+			similar: 'BMW X3 Aut. or Similar | Premium SUV',
 		},
 	},
 	{
@@ -49,7 +49,7 @@ const cars = [
 			suitCases: 3,
 			ac: true,
 			satNav: true,
-			similiar:
+			similar:
 				'Mercedez-Benz E-class Estate Aut. or Similar | Premium Estate',
 		},
 	},
@@ -67,7 +67,7 @@ const cars = [
 			suitCases: 2,
 			ac: true,
 			satNav: false,
-			similiar:
+			similar:
 				'Kia Ceed, Citroen C3 Aircross, skoda Fabia or Similar | Saloon',
 		},
 	},
@@ -85,7 +85,7 @@ const cars = [
 			suitCases: 1,
 			ac: true,
 			satNav: false,
-			similiar: 'BMW 1 Series, Audi Q2 or Similar | Premium Saloon',
+			similar: 'BMW 1 Series, Audi Q2 or Similar | Premium Saloon',
 		},
 	},
 	{
@@ -102,7 +102,7 @@ const cars = [
 			suitCases: 2,
 			ac: true,
 			satNav: false,
-			similiar:
+			similar:
 				'BMW 3 Series Aut., Mercedes-Benz C-Class Aut. or Similar | Premium Saloon',
 		},
 	},
@@ -120,7 +120,7 @@ const cars = [
 			suitCases: 2,
 			ac: true,
 			satNav: true,
-			similiar:
+			similar:
 				'Audi A5 Aut., Mercedes-Benz E-Class Aut. or Similar | Premium Saloon',
 		},
 	},
@@ -138,7 +138,7 @@ const cars = [
 			suitCases: 1,
 			ac: true,
 			satNav: false,
-			similiar: 'Audi A1 or Similar | Premium Saloon',
+			similar: 'Audi A1 or Similar | Premium Saloon',
 		},
 	},
 	{
@@ -155,7 +155,7 @@ const cars = [
 			suitCases: 2,
 			ac: true,
 			satNav: false,
-			similiar: 'Citroen C5 Aircross or Similar | Saloon',
+			similar: 'Citroen C5 Aircross or Similar | Saloon',
 		},
 	},
 	{
@@ -172,7 +172,7 @@ const cars = [
 			suitCases: 3,
 			ac: true,
 			satNav: true,
-			similiar: 'Mercedes-Benz GlE SUV Aut. or similar | Premium SUV',
+			similar: 'Mercedes-Benz GlE SUV Aut. or similar | Premium SUV',
 		},
 	},
 	{
@@ -189,7 +189,7 @@ const cars = [
 			suitCases: 1,
 			ac: true,
 			satNav: false,
-			similiar:
+			similar:
 				'Mini 5 Door Aut., Audi A1 Aut. or similar | Premium Saloon',
 		},
 	},
@@ -207,7 +207,7 @@ const cars = [
 			suitCases: 1,
 			ac: true,
 			satNav: false,
-			similiar:
+			similar:
 				'Mini 5 Door Aut., Audi A1 Aut. or similar | Premium Saloon',
 		},
 	},
@@ -225,7 +225,7 @@ const cars = [
 			suitCases: 20,
 			ac: false,
 			satNav: false,
-			similiar:
+			similar:
 				'VW Transporter., Ford Transit Custom or similar | Delivery vans',
 		},
 	},
@@ -243,7 +243,7 @@ const cars = [
 			suitCases: 3,
 			ac: false,
 			satNav: true,
-			similiar:
+			similar:
 				'Ford Tourneo Custom 9 Seater Aut., VW Shuttle 9 Seater Aut. or similar | Mini Bus',
 		},
 	},

@@ -8,7 +8,7 @@ export const TestModal = ({ id }) => {
 				type='button'
 				class='btn btn-primary'
 				data-mdb-toggle='modal'
-				data-mdb-target='#exampleModal'
+				data-mdb-target={`#${id}`}
 			>
 				Launch demo modal
 			</button>
@@ -16,7 +16,7 @@ export const TestModal = ({ id }) => {
 			{/* <!-- Modal --> */}
 			<div
 				class='modal top fade'
-				id='exampleModal'
+				id={id}
 				tabindex='-1'
 				aria-labelledby='exampleModalLabel'
 				aria-hidden='true'
