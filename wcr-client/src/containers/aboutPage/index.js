@@ -1,18 +1,14 @@
 import React from 'react';
 
-import { About } from '../../components/aboutPage';
+// import { About } from '../../components/aboutPage';
+import { TestCard } from '../../components/test-modal/testCar';
 
-import './style.css';
-import CarModal from '../../components/carModal';
+// import './style.css';
 
 export const AboutPage = () => {
-	return (
-		<div>
-			{/* component one */}
-			{/* <IntroSection></IntroSection>
-      <AboutSection></AboutSection>
-      <contactSection></contactSection> */}
-			<About></About>
-		</div>
-	);
+  return (
+    <div>
+      <TestCard></TestCard>
+    </div>
+  );
 };
