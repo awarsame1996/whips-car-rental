@@ -1,38 +1,46 @@
-.card-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgba(110, 40, 176, 0.483);
-  margin: 3px;
-  margin-top: 2px;
-  border-radius: 3px;
-  height: 4rem;
-}
-.btn {
-  background-color: rgba(110, 40, 176, 0.483);
-  margin: 3px;
-  border-radius: 2px;
-}
-.vehicles-card {
-  height: 492px;
-  width: 300px;
-  border-style: solid;
-  border-radius: 5px;
-  border-width: 5px;
 
-  border-color: rgb(200, 156, 196);
+.duration-checklist {
+	font-size: 15px;
 }
-.pricing {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgb(247 247 247);
-  width: 297px;
+.car-body {
+	margin-right: 1rem;
 }
-.card-info {
-  display: flex;
-  flex-direction: column;
+.payment-options {
+	margin-left: 1rem;
+	margin-bottom: 5px;
 }
-.card-image {
-  background-size: contain;
+.car-modal {
+	border-color: rgb(91, 72, 89);
 }
+.car-image {
+	text-align: center;
+	object-fit: cover;
+	height: 360px;
+	width: 300px;
+	border-radius: 3px;
+}
+.centered {
+	position: absolute;
+	top: 8px;
+}
+.font-color {
+	color: white;
+	margin-left: 4px;
+}
+.car-features {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.modal-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.duration-checklist {
+	margin-left: 5px;
+}
+/* .tester-image {
+	background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');
+} */
+

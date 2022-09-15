@@ -16,7 +16,7 @@ export const ALL_CARS = gql`
 				suitCases
 				ac
 				satNav
-				similiar
+				similar
 			}
 		}
 	}
@@ -38,7 +38,7 @@ export const SINGLE_CAR = gql`
 				suitCases
 				ac
 				satNav
-				similiar
+				similar
 			}
 		}
 	}

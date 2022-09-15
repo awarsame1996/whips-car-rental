@@ -56,6 +56,7 @@ export const VehicleCard = (props) => {
           <h7 className="text-muted mb-1">Incl. 450 miles</h7>
         </div>
 
+
         <div className="card-info mb-1 mt-2 ">
           <h7 className="text-muted">Deposit: £500</h7>
           <h7 className="text-muted">Insurance: Comprehensive</h7>
@@ -70,4 +71,5 @@ export const VehicleCard = (props) => {
       </div>
     </div>
   );
+
 };
