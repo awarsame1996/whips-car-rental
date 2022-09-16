@@ -76,6 +76,7 @@ export const SignupForm = () => {
 					id='firstName'
 					{...register('firstName', { required: true })}
 				></input>
+				{errors?.fistName && <p>Please input a last name</p>}
 			</div>
 			<div className='mb-3'>
 				<label for='lastName' className='form-label'>
@@ -87,6 +88,7 @@ export const SignupForm = () => {
 					id='lastName'
 					{...register('lastName', { required: true })}
 				></input>
+				{errors?.lastName && <p>Please input a last name</p>}
 			</div>
 			<div className='mb-3'>
 				<label for='username' className='form-label'>
@@ -98,6 +100,7 @@ export const SignupForm = () => {
 					id='username'
 					{...register('username', { required: false })}
 				></input>
+				{errors?.username && <p>Please input a username</p>}
 			</div>
 
 			<div className='mb-3'>
@@ -110,6 +113,7 @@ export const SignupForm = () => {
 					id='email'
 					{...register('email', { required: false })}
 				></input>
+				{errors?.email && <p>Please input an email</p>}
 			</div>
 
 			<div className='mb-3'>
@@ -122,6 +126,7 @@ export const SignupForm = () => {
 					id='password'
 					{...register('password', { required: true })}
 				></input>
+				{errors?.password && <p>Please input a password</p>}
 			</div>
 			<div className='mb-3'>
 				<label for='confirmPassword' className='form-label'>
@@ -133,6 +138,9 @@ export const SignupForm = () => {
 					id='confirmPassword'
 					{...register('confirmPassword', { required: true })}
 				></input>
+				{errors?.confirmPassword && (
+					<p>Please input a confirmation password</p>
+				)}
 			</div>
 
 			<button type='submit' className='btn btn-primary'>

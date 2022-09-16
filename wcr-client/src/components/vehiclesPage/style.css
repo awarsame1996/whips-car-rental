@@ -1,41 +1,44 @@
 .card-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgba(110, 40, 176, 0.483);
-  margin: 3px;
-  margin-top: 2px;
-  border-radius: 3px;
-  height: 4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: rgba(110, 40, 176, 0.483);
+	margin: 3px;
+	margin-top: 2px;
+	border-radius: 3px;
+	height: 4rem;
 }
 .btn {
-  background-color: rgba(110, 40, 176, 0.483);
-  margin: 3px;
-  border-radius: 2px;
+	background-color: rgba(110, 40, 176, 0.483);
+	margin: 3px;
+	border-radius: 2px;
 }
 .vehicles-card {
-  height: 492px;
-  width: 300px;
-  border-style: solid;
-  border-radius: 5px;
-  border-width: 5px;
+	height: 492px;
+	width: 300px;
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 5px;
 
-  border-color: rgb(200, 156, 196);
+	border-color: rgb(200, 156, 196);
 }
 .pricing {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgb(247 247 247);
-  width: 297px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: rgb(247 247 247);
+	width: 297px;
 }
 .card-info {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 .card-image {
-  background-size: contain;
+	background-size: contain;
 }
 .car-img {
-  height: 30rem;
+	height: 30rem;
+}
+.vehicle-image {
+	background-image: url('https://images.unsplash.com/photo-1598629586481-23df04581ea0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
 }
