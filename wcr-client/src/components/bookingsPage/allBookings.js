@@ -1,6 +1,6 @@
 import React from 'react';
-
-const AllBookings = () => {
+import './index.css';
+export const AllBookings = () => {
   return (
     <div class="container py-5 mt-4 ">
       <div className="d-flex justify-content-center mb-5">
