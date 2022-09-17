@@ -15,9 +15,9 @@ const createBooking = async (_, { createBookingInput }, { user }) => {
 
 			if (isDaily && !isWeekly) {
 				price = car.get('dailyPrice');
-				let start = new Date('07/15/2015');
+				let start = car.startDate;
 
-				let end = new Date('07/29/2015');
+				let end = car.endDate;
 
 				console.log(end);
 				const timeDifference = end.getTime() - start.getTime();
@@ -27,9 +27,9 @@ const createBooking = async (_, { createBookingInput }, { user }) => {
 
 			if (!isDaily && isWeekly) {
 				price = car.get('weeklyPrice');
-				let start = new Date('07/15/2015');
+				let start = car.startDate;
 
-				let end = new Date('07/29/2015');
+				let end = car.endDate;
 
 				console.log(end);
 				const timeDifference = end.getTime() - start.getTime();

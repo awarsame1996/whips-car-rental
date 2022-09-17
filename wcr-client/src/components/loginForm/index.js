@@ -14,7 +14,7 @@ export const LoginForm = () => {
 		handleSubmit,
 		setError,
 		formState: { errors },
-	} = useForm();
+	} = useForm({ mode: 'all' });
 	const [login, { loading, error }] = useMutation(LOGIN, {
 		onCompleted: (data) => {
 			const payload = {
@@ -39,7 +39,7 @@ export const LoginForm = () => {
 		console.log(formData.password, formData.email);
 		if (!formData.password || !formData.email) {
 			setError('password', {
-				type: 'manual',
+				type: 'customError',
 				message: 'fill in all fields',
 			});
 		} else {
@@ -69,9 +69,17 @@ export const LoginForm = () => {
 					type='email'
 					className='form-control'
 					id='email'
-					aria-describedby='emailHelp'
-					{...register('email', { required: true })}
+					{...register('email', {
+						required: 'please input a email',
+						pattern: {
+							value: [
+								/^([A-Za-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
+							],
+							message: 'email must be valid',
+						},
+					})}
 				></input>
+				<p>{errors.email?.message}</p>
 				<div id='emailHelp' className='form-text'>
 					We'll never share your email with anyone else.
 				</div>
@@ -84,8 +92,9 @@ export const LoginForm = () => {
 					type='password'
 					className='form-control'
 					id='password'
-					{...register('password', { required: true })}
+					{...register('password', { required: 'password is required' })}
 				></input>
+				<p>{errors.password?.message} </p>
 			</div>
 
 			<button type='submit' className='btn btn-primary'>

@@ -7,10 +7,8 @@ export const SignupForm = () => {
 	const {
 		register,
 		handleSubmit,
-		setError,
 		formState: { errors },
-	} = useForm();
-
+	} = useForm({ mode: 'all' });
 	const [signup, { loading, error }] = useMutation(SIGNUP, {
 		onCompleted: (data) => {
 			console.log(data);
@@ -29,30 +27,24 @@ export const SignupForm = () => {
 			password,
 			confirmPassword,
 		} = formData;
-		if (password !== confirmPassword) {
-			setError('confirmPassword', {
-				type: 'manual',
-				message: 'Passwords do not match.',
-			});
-		} else {
-			const signupInput = {
-				firstName,
-				lastName,
-				username,
-				email,
-				password,
-			};
-			console.log(signupInput);
 
-			try {
-				await signup({
-					variables: {
-						signupInput,
-					},
-				});
-			} catch (error) {
-				console.error(error.message);
-			}
+		const signupInput = {
+			firstName,
+			lastName,
+			username,
+			email,
+			password,
+		};
+		console.log(signupInput);
+
+		try {
+			await signup({
+				variables: {
+					signupInput,
+				},
+			});
+		} catch (error) {
+			console.error(error.message);
 		}
 	};
 
@@ -74,8 +66,19 @@ export const SignupForm = () => {
 					type='text'
 					className='form-control'
 					id='firstName'
-					{...register('firstName', { required: true })}
+					{...register('firstName', {
+						required: 'please input a first name',
+						minLength: {
+							value: 4,
+							message: 'first name must be at least 4 characters long',
+						},
+						maxLength: {
+							value: 40,
+							message: 'first name must be at most 40 characters long',
+						},
+					})}
 				></input>
+				<p>{errors.firstName?.message}</p>
 			</div>
 			<div className='mb-3'>
 				<label for='lastName' className='form-label'>
@@ -85,8 +88,19 @@ export const SignupForm = () => {
 					type='text'
 					className='form-control'
 					id='lastName'
-					{...register('lastName', { required: true })}
+					{...register('lastName', {
+						required: 'please input a last name',
+						minLength: {
+							value: 4,
+							message: 'last name must be at least 4 characters long',
+						},
+						maxLength: {
+							value: 40,
+							message: 'last name must be at most 40 characters long',
+						},
+					})}
 				></input>
+				<p>{errors.lastName?.message}</p>
 			</div>
 			<div className='mb-3'>
 				<label for='username' className='form-label'>
@@ -96,8 +110,19 @@ export const SignupForm = () => {
 					type='text'
 					className='form-control'
 					id='username'
-					{...register('username', { required: false })}
+					{...register('username', {
+						required: 'please input a last name',
+						minLength: {
+							value: 4,
+							message: 'username must be at least 4 characters long',
+						},
+						maxLength: {
+							value: 30,
+							message: 'username must be at most 30 characters long',
+						},
+					})}
 				></input>
+				<p>{errors.username?.message}</p>
 			</div>
 
 			<div className='mb-3'>
@@ -108,8 +133,17 @@ export const SignupForm = () => {
 					type='email'
 					className='form-control'
 					id='email'
-					{...register('email', { required: false })}
+					{...register('email', {
+						required: 'please input a last name',
+						pattern: {
+							value: [
+								/^([A-Za-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
+							],
+							message: 'email must be valid',
+						},
+					})}
 				></input>
+				<p>{errors.username?.message}</p>
 			</div>
 
 			<div className='mb-3'>
@@ -120,8 +154,9 @@ export const SignupForm = () => {
 					type='password'
 					className='form-control'
 					id='password'
-					{...register('password', { required: true })}
+					{...register('password', { required: 'password is required' })}
 				></input>
+				<p>{errors.password?.message} </p>
 			</div>
 			<div className='mb-3'>
 				<label for='confirmPassword' className='form-label'>
@@ -131,8 +166,12 @@ export const SignupForm = () => {
 					type='password'
 					className='form-control'
 					id='confirmPassword'
-					{...register('confirmPassword', { required: true })}
+					{...register('confirmPassword', {
+						required: 'confirmPassword is required',
+					})}
 				></input>
+
+				<p>{errors.confirmPassword?.message} </p>
 			</div>
 
 			<button type='submit' className='btn btn-primary'>
