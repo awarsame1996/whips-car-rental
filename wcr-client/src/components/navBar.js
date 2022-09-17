@@ -1,4 +1,6 @@
 import React from 'react';
+import Auth from '../utils/auth';
+import { Link } from 'react-router-dom';
 
 export const Navbars = () => {
 	return (
@@ -19,7 +21,7 @@ export const Navbars = () => {
 					<i className='fas fa-bars'></i>
 				</button>
 				<div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
-					<div className='navbar-nav'>
+					<div className='navbar-nav container-fluid justify-content-between'>
 						<a className='nav-link active' aria-current='page' href='/'>
 							Home
 						</a>
@@ -29,7 +31,29 @@ export const Navbars = () => {
 						<a className='nav-link' href='/about'>
 							About
 						</a>
-						<a className='nav-link disabled'>Disabled</a>
+						{/* if user is logged in show saved books and logout */}
+						{Auth.loggedIn() ? (
+							<>
+								<a className='nav-link' href='/bookings'>
+									{'bookings '}
+								</a>
+								<a className='nav-link' href='/accounts'>
+									{' accounts'}
+								</a>
+								<a className='nav-link' onClick={Auth.logout}>
+									{'Logout'}
+								</a>
+							</>
+						) : (
+							<>
+								<a className='nav-link' href='/sign-up'>
+									{' sign up'}
+								</a>
+								<a className='nav-link' href='/login'>
+									{' login'}
+								</a>
+							</>
+						)}
 					</div>
 				</div>
 			</div>
