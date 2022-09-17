@@ -40,7 +40,7 @@ export const Navbars = () => {
 								<a className='nav-link' href='/accounts'>
 									{' accounts'}
 								</a>
-								<a className='nav-link' onClick={Auth.logout}>
+								<a className='nav-link' onClick={Auth.logout} href=''>
 									{'Logout'}
 								</a>
 							</>
