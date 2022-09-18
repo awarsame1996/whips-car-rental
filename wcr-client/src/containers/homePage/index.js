@@ -28,10 +28,16 @@ export const HomePage = () => {
               01
             </h2>
           </div>
-          <h3 data-aos="fade-out" className="content column align items centre">
+          <h3
+            data-aos="zoom-out-down"
+            className="content column align items centre"
+          >
             Select your perfect car
           </h3>
-          <p data-aos="fade-out" className="content column align items centre ">
+          <p
+            data-aos="fade-down"
+            className="content column align items centre "
+          >
             Find the perfect car for your needs. Search by drive type and
             available dates.
           </p>
@@ -43,12 +49,12 @@ export const HomePage = () => {
             </h2>
           </div>
           <h3
-            data-aos="fade-out"
+            data-aos="zoom-out-down"
             className="content column align items centre "
           >
             Book it online
           </h3>
-          <p data-aos="fade-out" className="content">
+          <p data-aos="fade-down" className="content">
             Secure available dates. Then book & pay with our easy to use car
             booking system
           </p>
@@ -62,10 +68,13 @@ export const HomePage = () => {
               03
             </h2>
           </div>
-          <h3 data-aos="fade-out" className="content column align items centre">
+          <h3
+            data-aos="zoom-out-down"
+            className="content column align items centre"
+          >
             Collect and Drive Right away
           </h3>
-          <p data-aos="fade-out" className="content column align items centre">
+          <p data-aos="fade-down" className="content column align items centre">
             The Car you reserved or similar will be waiting for you on arrival.
             Just come and enjoy our quick and easy service!
           </p>
