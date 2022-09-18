@@ -8,6 +8,16 @@
 .banner-txt {
   font-size: 5rem;
 }
+.gradient-text {
+  background-image: linear-gradient(
+    90deg,
+    rgb(200, 156, 196),
+    purple,
+    rgba(110, 40, 176, 0.483)
+  );
+  background-clip: text;
+  color: transparent;
+}
 .intro-section {
   width: 100vw;
   height: 850px;
@@ -75,8 +85,6 @@
 }
 
 .contact-section-container {
-  width: 100vw;
-  background-color: rgb(247 247 247);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -121,4 +129,63 @@
 }
 .centered-text {
   font-size: 5rem;
+}
+
+/* user journey section */
+
+.j-card-container {
+  background: #232923;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 78vh;
+}
+
+.user-journey {
+  position: relative;
+  text-align: center;
+  background: #232923;
+  height: 30rem;
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgb(198, 59, 229);
+  margin-left: 5rem;
+}
+.user-journey::after {
+  position: absolute;
+  content: '';
+  height: 240%;
+  width: 275%;
+  left: -50%;
+  top: -50%;
+  background: conic-gradient(
+    rgba(110, 40, 176, 0.483),
+    rgb(200, 156, 196),
+    white,
+    purple
+  );
+  animation: rgb 2s infinite linear;
+}
+@keyframes rgb {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.user-journey::before {
+  content: '';
+  inset: 3px;
+  position: absolute;
+  z-index: 2;
+  background: #232923;
+}
+.content {
+  position: relative;
+  z-index: 3;
+  padding: 20px;
+  text-align: center;
 }
