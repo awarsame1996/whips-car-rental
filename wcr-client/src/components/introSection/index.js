@@ -20,7 +20,7 @@ const IntroSection = () => {
           >
             <strong>WHIPS</strong>
           </h1>
-          <h4 data-aos="fade-down" className="text-center text-muted col-md-8">
+          <h4 data-aos="zoom-out" className="text-center text-muted col-md-8">
             The Ultimate Rental Experience
           </h4>
         </div>
