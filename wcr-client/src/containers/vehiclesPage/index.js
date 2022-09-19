@@ -11,7 +11,7 @@ import { ALL_CARS } from '../../graphql/queries';
 
 export const VehiclesPage = () => {
 	// use
-	const { loading, error, data } = useQuery(ALL_CARS);
+	const [user, { loading, error, data }] = useQuery(ALL_CARS);
 
 	if (loading) return 'Loading...';
 

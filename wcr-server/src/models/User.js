@@ -1,6 +1,8 @@
 const bcrypt = require('bcrypt');
 const { Schema, model } = require('mongoose');
 
+const bookingSchema = require('./Booking');
+
 const userSchema = {
 	firstName: {
 		type: String,
@@ -38,17 +40,15 @@ const userSchema = {
 		maxLength: 50,
 		trim: true,
 	},
-	bookings: { type: Schema.Types.ObjectId, ref: 'Booking' },
-};
-const options = {
-	toJSON: {
-		virtuals: true,
-		getters: true,
-	},
-	id: false,
+	bookings: [
+		{
+			type: Schema.Types.ObjectId,
+			ref: 'Booking',
+		}
+	]
 };
 
-const schema = new Schema(userSchema, options);
+const schema = new Schema(userSchema);
 
 schema.method('checkPassword', async function (password) {
 	const isValid = await bcrypt.compare(password, this.password);

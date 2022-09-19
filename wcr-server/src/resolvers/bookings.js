@@ -4,7 +4,7 @@ const { Booking } = require('../models');
 const bookings = async (_, __, { user }) => {
 	try {
 		if (user) {
-			const bookings = await Booking.find({}).populate('Car');
+			const bookings = await Booking.find({}).populate('car');
 
 			return bookings;
 		} else {

@@ -20,11 +20,17 @@ const bookingSchema = {
 		type: Boolean,
 		default: true,
 	},
-
-	car: {
+	booker: {
 		type: Schema.Types.ObjectId,
-		ref: 'Car',
+		ref: 'User',
 	},
+
+	car: [
+		{
+			type: Schema.Types.ObjectId,
+			ref: 'Car',
+		},
+	],
 
 	totalCost: {
 		type: Number,
@@ -35,15 +41,8 @@ const bookingSchema = {
 	//   required: true,
 	// },
 };
-const options = {
-	toJSON: {
-		virtuals: true,
-		getters: true,
-	},
-	id: false,
-};
 
-const schema = new Schema(bookingSchema, options);
+const schema = new Schema(bookingSchema);
 
 const Booking = model('Booking', schema);
 

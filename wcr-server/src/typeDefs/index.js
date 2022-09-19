@@ -11,11 +11,12 @@ const typeDefs = gql`
 		similar: String
 	}
 	type User {
-		_id: ID!
+		id: ID!
 		firstName: String!
 		lastName: String!
 		email: String!
 		username: String!
+		bookings: [Booking]
 	}
 	type SignupSuccess {
 		success: Boolean!
@@ -50,7 +51,7 @@ const typeDefs = gql`
 		isDaily: Boolean!
 		isWeekly: Boolean!
 		totalCost: String!
-		car: Car
+		car: [Car]
 	}
 	type Car {
 		_id: ID!
@@ -65,6 +66,7 @@ const typeDefs = gql`
 		cars: [Car]
 		car(carId: ID!): Car
 		bookings: [Booking]
+		user(userId: ID!): User
 		booking(bookingId: ID!): Booking
 	}
 

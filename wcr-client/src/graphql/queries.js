@@ -43,3 +43,40 @@ export const SINGLE_CAR = gql`
 		}
 	}
 `;
+
+export const SINGLE_USER = gql`
+	query User($userId: ID!) {
+		user(userId: $userId) {
+			id
+			firstName
+			lastName
+			email
+			username
+			bookings {
+				_id
+				startDate
+				endDate
+				isDaily
+				isWeekly
+				totalCost
+				car {
+					_id
+					make
+					model
+					imageUrl
+					dailyPrice
+					weeklyPrice
+					specifications {
+						seats
+						doors
+						transmission
+						suitCases
+						ac
+						satNav
+						similar
+					}
+				}
+			}
+		}
+	}
+`;
