@@ -23,14 +23,33 @@ export const BookingPage = () => {
 
 	if (data) {
 		console.log(data);
+
+		return (
+			<div>
+				<BookingModal></BookingModal>
+				<div
+					style={{
+						backgroundColor: '#eee',
+						minHeight: '90vh',
+						width: '90vw',
+						borderWidth: '1px',
+						borderStyle: 'solid',
+
+						borderRadius: '12px',
+					}}
+					className=' container py-5 mt-4 '
+				>
+					{' '}
+					<div className='d-flex justify-content-center mb-5'>
+						<h1>All Bookings</h1>
+					</div>
+					{data.user.bookings.map((booking) => {
+						return <AllBookings booking={booking}></AllBookings>;
+					})}
+				</div>
+
+				<Footerr></Footerr>
+			</div>
+		);
 	}
-
-	return (
-		<div>
-			<BookingModal></BookingModal>
-
-			<AllBookings></AllBookings>
-			<Footerr></Footerr>
-		</div>
-	);
 };
