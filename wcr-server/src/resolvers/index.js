@@ -5,6 +5,7 @@ const car = require('./car');
 const createBooking = require('./createBooking');
 const booking = require('./booking');
 const bookings = require('./bookings');
+const user = require('./user');
 
 const resolvers = {
 	Query: {
@@ -12,6 +13,7 @@ const resolvers = {
 		car,
 		bookings,
 		booking,
+		user,
 	},
 	Mutation: {
 		login,

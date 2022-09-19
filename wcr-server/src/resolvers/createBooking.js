@@ -15,27 +15,49 @@ const createBooking = async (_, { createBookingInput }, { user }) => {
 
 			if (isDaily && !isWeekly) {
 				price = car.get('dailyPrice');
-				let start = car.startDate;
+				let start = startDate;
+				console.log(start);
 
-				let end = car.endDate;
+				const startArray = start.split('-');
+				let startDuration = new Date(
+					startArray[1] + '/' + startArray[2] + '/' + startArray[0]
+				);
+				console.log('start', startDuration);
 
-				console.log(end);
-				const timeDifference = end.getTime() - start.getTime();
+				let end = endDate;
+				const endArray = end.split('-');
+				let endDuration = new Date(
+					endArray[1] + '/' + endArray[2] + '/' + endArray[0]
+				);
 
+				const timeDifference =
+					endDuration.getTime() - startDuration.getTime();
 				duration = timeDifference / (1000 * 60 * 60 * 24);
+				console.log(duration);
 			}
 
 			if (!isDaily && isWeekly) {
 				price = car.get('weeklyPrice');
-				let start = car.startDate;
+				let start = startDate;
 
-				let end = car.endDate;
+				const startArray = start.split('-');
+				let startDuration = new Date(
+					startArray[1] + '/' + startArray[2] + '/' + startArray[0]
+				);
 
-				console.log(end);
-				const timeDifference = end.getTime() - start.getTime();
-				duration = timeDifference / (1000 * 60 * 60 * 24 * 7);
+				let end = endDate;
+				const endArray = end.split('-');
+				let endDuration = new Date(
+					endArray[1] + '/' + endArray[2] + '/' + endArray[0]
+				);
+
+				console.log(endDuration);
+				const timeDifference =
+					endDuration.getTime() - startDuration.getTime();
+				duration = timeDifference / (1000 * 60 * 60 * 24);
 			}
 			const totalCost = price * duration;
+			console.log('totalCost', totalCost);
 			// calculating difference of days
 
 			const newBooking = await Booking.create({
@@ -47,17 +69,13 @@ const createBooking = async (_, { createBookingInput }, { user }) => {
 				car: carId,
 			});
 
-			await User.findByIdAndUpdate(user._id, {
+			await User.findByIdAndUpdate(user.id, {
 				$push: {
 					bookings: newBooking._id,
 				},
 			});
 
-			const booking = await Booking.findById(newBooking._id).populate(
-				'car'
-			);
-
-			return booking;
+			// await User.findOneAndUpdate(user.id).populate(bookings);
 		} else {
 			throw new AuthenticationError('Unauthorized access');
 		}

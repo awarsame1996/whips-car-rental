@@ -15,6 +15,13 @@ const users = [
 		password: 'password123',
 		username: 'adamali',
 	},
+	{
+		firstName: 'test',
+		lastName: 'test',
+		email: 'test@gmail.com',
+		password: 'password123',
+		username: 'test',
+	},
 ];
 const seedUsers = async () => {
 	const promises = users.map((user) => User.create(user));

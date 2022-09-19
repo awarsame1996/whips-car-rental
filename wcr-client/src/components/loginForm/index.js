@@ -19,6 +19,7 @@ export const LoginForm = () => {
 		onCompleted: (data) => {
 			const payload = {
 				token: data.login.token,
+				id: data.login.user.id,
 				firstName: data.login.user.firstName,
 				lastName: data.login.user.lastName,
 				email: data.login.user.email,
