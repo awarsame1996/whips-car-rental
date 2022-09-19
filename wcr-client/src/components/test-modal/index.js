@@ -39,18 +39,6 @@ export const TestModal = ({ car, id }) => {
 		if (!isWeeklyCheckBox && !isDailyCheckBox) {
 			checkboxesEmpty = true;
 		}
-		// if (!startDate) {
-		// 	setError('startDate', {
-		// 		type: 'manual',
-		// 		message: 'start date is required',
-		// 	});
-		// }
-		// if (!endDate) {
-		// 	setError('isWeeklyCheckBox', {
-		// 		type: 'manual',
-		// 		message: 'end date is required',
-		// 	});
-		// }
 
 		const createBookingInput = {
 			isDaily,
