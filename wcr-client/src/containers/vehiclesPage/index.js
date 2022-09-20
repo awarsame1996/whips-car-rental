@@ -10,30 +10,30 @@ import { useQuery } from '@apollo/client';
 import { ALL_CARS } from '../../graphql/queries';
 
 export const VehiclesPage = () => {
-	// use
-	const { loading, error, data } = useQuery(ALL_CARS);
+  // use
+  const { loading, error, data } = useQuery(ALL_CARS);
 
-	if (loading) return 'Loading...';
+  if (loading) return 'Loading...';
 
-	if (error) return `Error! ${error.message}`;
+  if (error) return `Error! ${error.message}`;
 
-	if (data) {
-		console.log(data);
+  if (data) {
+    console.log(data);
 
-		return (
-			<div>
-				<VehicleHero></VehicleHero>
-				<Sorter></Sorter>
+    return (
+      <div>
+        <VehicleHero></VehicleHero>
+        <Sorter></Sorter>
 
-				<div className='container'>
-					<div class='row gx-2 justify-content-start'>
-						{data.cars.map((car) => {
-							return <VehicleCard car={car}> </VehicleCard>;
-						})}
-					</div>
-				</div>
-			</div>
-		);
-	}
-	// graph ql query to get car data
+        <div className="container">
+          <div class="row gx-2 justify-content-start">
+            {data.cars.map((car) => {
+              return <VehicleCard car={car}> </VehicleCard>;
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+  // graph ql query to get car data
 };
