@@ -5,6 +5,7 @@ export const AllBookings = (props) => {
 	const { booking } = props;
 	console.log(booking);
 
+
 	const generateRandomID = () => {
 		const characters =
 			'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -35,6 +36,7 @@ export const AllBookings = (props) => {
 										className='booking-image'
 									/>
 									{/* <a href="#!">
+
                       <div className="hover-overlay">
                         <div className="mask booking-card"></div>
                       </div>

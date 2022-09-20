@@ -6,9 +6,6 @@ export const Navbars = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Navbar
-        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -31,15 +28,37 @@ export const Navbars = () => {
             <a className="nav-link" href="/about">
               About
             </a>
+
             {/* if user is logged in show saved books and logout */}
             {Auth.loggedIn() ? (
               <>
-                <a className="nav-link" href="/bookings">
-                  {'bookings '}
-                </a>
-                <a className="nav-link" href="/accounts">
-                  {' accounts'}
-                </a>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdownMenuLink"
+                    role="button"
+                    data-mdb-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    {'My Account'}
+                  </a>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="navbarDropdownMenuLink"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="/accounts">
+                        {' MY Profile '}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/bookings">
+                        {'My Bookings '}
+                      </a>
+                    </li>
+                  </ul>
+                </li>
                 <a className="nav-link" onClick={Auth.logout} href="">
                   {'Logout'}
                 </a>
