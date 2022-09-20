@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { TestModal } from './components/test-modal';
 import { AboutPage } from './containers/aboutPage';
+import { AccountPage } from './containers/accountsPage';
 import { BookingPage } from './containers/bookingPage';
 import { HomePage } from './containers/homePage';
 import { LoginPage } from './containers/loginPage';
@@ -24,6 +25,7 @@ export const AppRoutes = () => {
       />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/bookings" element={<BookingPage />} />
+      <Route path="/accounts" element={<AccountPage />} />
 
       <Route path="/" element={<HomePage />} />
     </Routes>
