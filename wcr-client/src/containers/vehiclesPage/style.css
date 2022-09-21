@@ -1,3 +1,13 @@
 .vh-60 {
 	height: 60vh;
 }
+.sort-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.options-nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
