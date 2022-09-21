@@ -26,10 +26,10 @@ export const LoginForm = () => {
 			};
 
 			localStorage.setItem('user', JSON.stringify(payload));
-
-			navigate('/');
 			const { token } = data.login;
 			AuthService.login(token);
+
+			navigate('/', { replace: true });
 		},
 		onError: (error) => {
 			console.error(error);

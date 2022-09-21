@@ -3,9 +3,13 @@ import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
 
 export const Navbars = () => {
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark bg-light">
       <div className="container-fluid">
+       	<a className='navbar-brand' href='#'>
+					<i class='fa fa-car' aria-hidden='true'></i>| Whips
+				</a>
         <button
           className="navbar-toggler"
           type="button"
@@ -78,4 +82,5 @@ export const Navbars = () => {
       </div>
     </nav>
   );
+
 };
