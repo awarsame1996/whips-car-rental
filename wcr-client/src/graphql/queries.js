@@ -80,3 +80,33 @@ export const SINGLE_USER = gql`
 		}
 	}
 `;
+
+export const SINGLE_BOOKING = gql`
+	query Query($bookingId: ID!) {
+		booking(bookingId: $bookingId) {
+			_id
+			startDate
+			endDate
+			isDaily
+			isWeekly
+			totalCost
+			car {
+				_id
+				make
+				model
+				imageUrl
+				dailyPrice
+				weeklyPrice
+				specifications {
+					seats
+					doors
+					transmission
+					suitCases
+					ac
+					satNav
+					similar
+				}
+			}
+		}
+	}
+`;
