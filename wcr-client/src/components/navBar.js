@@ -6,7 +6,7 @@ export const Navbars = () => {
 	return (
 		<nav className=' navbar navbar-expand-lg navbar-dark bg-dark bg-light'>
 			<div className='container-fluid'>
-				<a className='navbar-brand' href='#'>
+				<a className='navbar-brand' aria-current='page' href='/'>
 					<i class='fa fa-car' aria-hidden='true'></i>| Whips
 				</a>
 				<button
@@ -21,10 +21,7 @@ export const Navbars = () => {
 					<i className='fas fa-bars'></i>
 				</button>
 				<div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
-					<div className='navbar-nav container-fluid justify-content-between'>
-						<a className='nav-link active' aria-current='page' href='/'>
-							Home
-						</a>
+					<div className='navbar-nav container-fluid justify-content-end'>
 						<a className='nav-link' href='/vehicles'>
 							Vehicles
 						</a>
