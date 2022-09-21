@@ -38,6 +38,25 @@ export const VehiclesPage = () => {
 			setFilteredList(filteredCars);
 		}
 	};
+
+	const handleSorter = (e) => {
+		sortByPrice(e.target.id);
+	};
+	const sortByPrice = (filteredInput) => {
+		const sorterArray = carList;
+		if (filteredInput == '>') {
+			console.log(sorterArray);
+			console.log(
+				carList.sort((a, b) => (a.dailyPrice > b.dailyPrice ? 1 : -1))
+			);
+		}
+
+		if (filteredInput == '<') {
+			console.log(
+				carList.sort((a, b) => (a.dailyPrice > b.dailyPrice ? -1 : 1))
+			);
+		}
+	};
 	console.log('this is filter list ', filteredList);
 	if (loading) return 'Loading...';
 
@@ -192,7 +211,7 @@ export const VehiclesPage = () => {
 							<button
 								className='dropdown-item'
 								type='button'
-								onChange={handleFilter}
+								onClick={handleSorter}
 							>
 								recommended
 							</button>
@@ -201,7 +220,8 @@ export const VehiclesPage = () => {
 							<button
 								className='dropdown-item'
 								type='button'
-								onChange={handleFilter}
+								id='<'
+								onClick={handleSorter}
 							>
 								low to high
 							</button>
@@ -210,7 +230,8 @@ export const VehiclesPage = () => {
 							<button
 								className='dropdown-item'
 								type='button'
-								onChange={handleFilter}
+								id='>'
+								onClick={handleSorter}
 							>
 								high to low
 							</button>
