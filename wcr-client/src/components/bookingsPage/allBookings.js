@@ -1,6 +1,5 @@
 import React from 'react';
-import Moment from 'react-moment';
-
+import { fromUnixTime } from 'date-fns';
 import './index.css';
 import { BookingModal } from './booking-modal';
 export const AllBookings = (props) => {
@@ -24,6 +23,12 @@ export const AllBookings = (props) => {
 	};
 
 	const carID = generateRandomID();
+	const start = fromUnixTime(booking.startDate / 1000)
+		.toString()
+		.split('2022')[0];
+	const end = fromUnixTime(booking.endDate / 1000)
+		.toString()
+		.split('2022')[0];
 
 	return (
 		<div className='row justify-content-center mb-5 '>
@@ -55,14 +60,8 @@ export const AllBookings = (props) => {
 											</h4>
 										</div>
 										<div className='d-flex flex-column justify-content-center align-items-center  border-sm-start-none border-bottom'>
-											<h6>
-												{' '}
-												Booking Start Date:{' '}
-												<Moment>{booking.startDate}</Moment>{' '}
-											</h6>
-											<h6 className='mt-1  '>
-												Booking End Date: {booking.endDate}
-											</h6>
+											<h6> Booking Start Date: {start}</h6>
+											<h6 className='mt-1  '>Booking End Date: {end}</h6>
 										</div>
 									</div>
 								</div>

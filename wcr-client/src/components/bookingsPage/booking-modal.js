@@ -1,6 +1,5 @@
 import React from 'react';
-import Moment from 'react-moment';
-
+import { fromUnixTime } from 'date-fns';
 import './index.css';
 
 import { SINGLE_BOOKING } from '../../graphql/queries';
@@ -16,8 +15,15 @@ export const BookingModal = ({ bookingID, id }) => {
 	if (error) return `Error! ${error.message}`;
 
 	if (data) {
-		console.log('modal data', data);
+		const { totalCost } = data.booking;
 
+		const cost = (Math.round(totalCost * 100) / 100).toFixed(2);
+		const start = fromUnixTime(data.booking.startDate / 1000)
+			.toString()
+			.split('2022')[0];
+		const end = fromUnixTime(data.booking.endDate / 1000)
+			.toString()
+			.split('2022')[0];
 		return (
 			<div className='d-flex flex-column mt-3'>
 				{/* <!-- Button trigger modal --> */}
@@ -51,7 +57,7 @@ export const BookingModal = ({ bookingID, id }) => {
 								<div
 									className='col-md-8 bg-image booking-md-bg card shadow-1-strong mt-2 mb-2 '
 									style={{
-										backgroundImage: `url( https://images.unsplash.com/photo-1621349337628-d4f1c1a24114?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YXVkaSUyMHE1fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60)`,
+										backgroundImage: `url(${data.booking.car[0].imageUrl})`,
 										width: '29rem',
 									}}
 								>
@@ -99,21 +105,19 @@ export const BookingModal = ({ bookingID, id }) => {
 											<div class='form-outline'>
 												<h3>Start Date:</h3>
 
-												<h3 className='text-muted'>
-													<Moment>{data.booking.startDate}</Moment>
-												</h3>
+												<h3 className='text-muted'>{start}</h3>
 											</div>
 											<hr />
 										</div>
 										<div class='col-md-8 '>
 											<div class='form-outline '>
 												<h3>End Date:</h3>
-												<h3 className='text-muted'>26/09/2022</h3>
+												<h3 className='text-muted'>{end}</h3>
 											</div>
 											<hr />
 										</div>
 										<div className='mt-3'>
-											<h3>Total Cost: £230</h3>
+											<h3>Total Cost: £{cost}</h3>
 										</div>
 									</div>
 								</div>
