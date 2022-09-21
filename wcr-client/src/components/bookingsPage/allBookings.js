@@ -1,9 +1,12 @@
 import React from 'react';
+import Moment from 'react-moment';
+
 import './index.css';
 import { BookingModal } from './booking-modal';
 export const AllBookings = (props) => {
 	const { booking } = props;
-	console.log(booking);
+
+	const bookingID = booking._id;
 
 	const generateRandomID = () => {
 		const characters =
@@ -52,7 +55,11 @@ export const AllBookings = (props) => {
 											</h4>
 										</div>
 										<div className='d-flex flex-column justify-content-center align-items-center  border-sm-start-none border-bottom'>
-											<h6> Booking Start Date: {booking.startDate} </h6>
+											<h6>
+												{' '}
+												Booking Start Date:{' '}
+												<Moment>{booking.startDate}</Moment>{' '}
+											</h6>
 											<h6 className='mt-1  '>
 												Booking End Date: {booking.endDate}
 											</h6>
@@ -63,7 +70,7 @@ export const AllBookings = (props) => {
 							<div className='col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start'>
 								<div className='d-flex flex-column mt-3'>
 									<BookingModal
-										booking={booking}
+										bookingID={bookingID}
 										id={carID}
 									></BookingModal>
 

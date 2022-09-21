@@ -26,7 +26,6 @@ export const BookingPage = () => {
 
 		return (
 			<div>
-				<BookingModal></BookingModal>
 				<div
 					style={{
 						backgroundColor: '#eee',
