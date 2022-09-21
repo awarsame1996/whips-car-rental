@@ -128,4 +128,5 @@ export const BookingModal = ({ bookingID, id }) => {
 			</div>
 		);
 	}
+
 };
