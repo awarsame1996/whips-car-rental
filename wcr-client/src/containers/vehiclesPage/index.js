@@ -8,6 +8,7 @@ import { ALL_CARS } from '../../graphql/queries';
 import { Filter } from '../../components/vehiclesPage/filter';
 
 export const VehiclesPage = () => {
+
 	// Selected Brand name filter
 	// List of all cars satisfing all the filters
 
@@ -230,4 +231,5 @@ export const VehiclesPage = () => {
 		);
 	}
 	// graph ql query to get car data
+
 };
