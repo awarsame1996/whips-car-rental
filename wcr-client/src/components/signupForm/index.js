@@ -112,7 +112,7 @@ export const SignupForm = () => {
 					className='form-control'
 					id='username'
 					{...register('username', {
-						required: 'please input a last name',
+						required: 'please input a username',
 						minLength: {
 							value: 4,
 							message: 'username must be at least 4 characters long',
