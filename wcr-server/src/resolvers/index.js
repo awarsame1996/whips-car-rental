@@ -6,6 +6,8 @@ const createBooking = require('./createBooking');
 const booking = require('./booking');
 const bookings = require('./bookings');
 const user = require('./user');
+const updateUser = require('./updateUser');
+const deleteUser = require('./deleteUser');
 
 const resolvers = {
 	Query: {
@@ -19,6 +21,8 @@ const resolvers = {
 		login,
 		signup,
 		createBooking,
+		updateUser,
+		deleteUser,
 	},
 };
 

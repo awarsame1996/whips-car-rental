@@ -37,6 +37,12 @@ const typeDefs = gql`
 		password: String!
 		username: String!
 	}
+	input UserUpdate {
+		firstName: String
+		lastName: String
+		email: String
+		username: String
+	}
 	input CreateBookingInput {
 		startDate: String!
 		endDate: String!
@@ -74,6 +80,8 @@ const typeDefs = gql`
 		login(loginInput: LoginInput!): LoginSuccess
 		signup(signupInput: SignupInput!): SignupSuccess
 		createBooking(createBookingInput: CreateBookingInput!): Booking
+		updateUser(userInput: UserUpdate!, userId: ID): User
+		deleteUser(userId: ID): User
 	}
 `;
 
