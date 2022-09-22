@@ -8,8 +8,8 @@ import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
 
 import './index.css';
-import { ConfirmModal } from '../../components/confirmationModal';
-import { UPDATEUSER } from '../../graphql/mutations';
+import AuthService from '../../utils/auth';
+import { DELETEUSER, UPDATEUSER } from '../../graphql/mutations';
 
 export const AccountPage = () => {
 	const navigate = useNavigate();
@@ -22,6 +22,15 @@ export const AccountPage = () => {
 	const [updateUser] = useMutation(UPDATEUSER, {
 		onCompleted: (data) => {
 			navigate('/', { replace: true });
+		},
+		onError: (error) => {
+			console.error(error);
+		},
+	});
+	const [deleteUser] = useMutation(DELETEUSER, {
+		onCompleted: (data) => {
+			navigate('/', { replace: true });
+			AuthService.logout();
 		},
 		onError: (error) => {
 			console.error(error);
@@ -82,6 +91,30 @@ export const AccountPage = () => {
 			}
 
 			swal('updated!', 'updated completed', 'success');
+		};
+		const handleDelete = async () => {
+			const userId = user.id;
+			try {
+				await deleteUser({
+					variables: {
+						userId,
+					},
+				});
+			} catch (error) {
+				console.error(error.message);
+			}
+		};
+		const handleConfirmation = async () => {
+			if (
+				!(await swal({
+					text: 'Are you sure?',
+					buttons: true,
+					dangerMode: true,
+				}))
+			) {
+			} else {
+				handleDelete();
+			}
 		};
 
 		return (
@@ -221,6 +254,7 @@ export const AccountPage = () => {
 								UPDATE
 							</button>
 							<button
+								onClick={handleConfirmation}
 								style={{
 									Height: '15rem',
 									width: '25rem',
