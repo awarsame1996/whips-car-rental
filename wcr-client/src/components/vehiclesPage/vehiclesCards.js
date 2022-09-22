@@ -31,8 +31,6 @@ export const VehicleCard = (props) => {
   return (
     <div className="col-lg-3 col-md-6 mt-4 mb-5">
       <div
-        data-aos="zoom-out-right"
-        data-aos-delay="300"
         className="card vehicles-card text-center border border-primary shadow-0 "
         // style={{background-color:#fafafa}}
       >
@@ -54,12 +52,19 @@ export const VehicleCard = (props) => {
         >
           <div data-aos="fade-down" className="card-body text-white"></div>
         </div>
-        <div className="pricing mt-2 align-items-center">
+        <div
+          data-aos="zoom-out-down"
+          data-aos-delay="300"
+          className="pricing mt-2 align-items-center"
+        >
           <h5 className="text-muted">Daily Price: £{car.dailyPrice}</h5>
           <h5 className="text-muted mb-1">Weekly Price: £{car.weeklyPrice}</h5>
         </div>
 
-        <div className="card-info mb-2 mt-4 border-sm-start-none border-bottom ">
+        <div
+          data-aos-delay="300"
+          className="card-info mb-2 mt-4 border-sm-start-none border-bottom "
+        >
           <h7 className="text-muted">Deposit: £500</h7>
           <h7 className="text-muted">Insurance: Comprehensive</h7>
           <h7 className="text-muted mb-1">Incl. 450 miles</h7>
