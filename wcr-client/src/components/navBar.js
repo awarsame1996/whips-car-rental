@@ -1,9 +1,7 @@
 import React from 'react';
 import Auth from '../utils/auth';
-import { Link } from 'react-router-dom';
 
 export const Navbars = () => {
-
 	return (
 		<nav
 			className=' navbar navbar-expand-lg navbar-dark '
@@ -13,7 +11,7 @@ export const Navbars = () => {
 		>
 			<div className='container-fluid'>
 				<a className='navbar-brand' href='#'>
-					<i class='fa fa-car' aria-hidden='true'></i>| Whips
+					<i className='fa fa-car' aria-hidden='true'></i>| Whips
 				</a>
 				<button
 					className='navbar-toggler'
@@ -41,9 +39,9 @@ export const Navbars = () => {
 						{/* if user is logged in show saved books and logout */}
 						{Auth.loggedIn() ? (
 							<>
-								<li class='nav-item dropdown'>
+								<li className='nav-item dropdown'>
 									<a
-										class='nav-link dropdown-toggle'
+										className='nav-link dropdown-toggle'
 										href='#'
 										id='navbarDropdownMenuLink'
 										role='button'
@@ -53,16 +51,16 @@ export const Navbars = () => {
 										{'My Account'}
 									</a>
 									<ul
-										class='dropdown-menu'
+										className='dropdown-menu'
 										aria-labelledby='navbarDropdownMenuLink'
 									>
 										<li>
-											<a class='dropdown-item' href='/accounts'>
+											<a className='dropdown-item' href='/accounts'>
 												{' MY Profile '}
 											</a>
 										</li>
 										<li>
-											<a class='dropdown-item' href='/bookings'>
+											<a className='dropdown-item' href='/bookings'>
 												{'My Bookings '}
 											</a>
 										</li>
@@ -87,5 +85,4 @@ export const Navbars = () => {
 			</div>
 		</nav>
 	);
-
 };

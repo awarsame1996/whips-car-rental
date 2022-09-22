@@ -2,11 +2,9 @@ import './index.css';
 import { useForm } from 'react-hook-form';
 import { useMutation } from '@apollo/client';
 import { BOOKING } from '../../graphql/mutations';
-import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 
-export const TestModal = ({ car, id }) => {
-	const navigate = useNavigate();
+export const CarModal = ({ car, id }) => {
 	const [booking, { loading, error }] = useMutation(BOOKING, {
 		onCompleted: (data) => {},
 		onError: (error) => {
@@ -18,8 +16,7 @@ export const TestModal = ({ car, id }) => {
 	const {
 		register,
 		handleSubmit,
-		setError,
-		clearErrors,
+
 		formState: { errors },
 	} = useForm();
 

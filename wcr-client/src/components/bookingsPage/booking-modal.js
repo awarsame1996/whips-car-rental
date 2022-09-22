@@ -38,7 +38,7 @@ export const BookingModal = ({ bookingID, id }) => {
 
 				{/* <!-- Modal --> */}
 				<div
-					class='modal top fade'
+					className='modal top fade'
 					id={id}
 					tabindex='-1'
 					aria-labelledby='exampleModalLabel'
@@ -100,17 +100,17 @@ export const BookingModal = ({ bookingID, id }) => {
 									</div>
 								</div>
 								<div className='col-md-4 border-sm-start-none border-start'>
-									<div class='row justify-content-center text-center'>
-										<div class='col-md-8 '>
-											<div class='form-outline'>
+									<div className='row justify-content-center text-center'>
+										<div className='col-md-8 '>
+											<div className='form-outline'>
 												<h3>Start Date:</h3>
 
 												<h3 className='text-muted'>{start}</h3>
 											</div>
 											<hr />
 										</div>
-										<div class='col-md-8 '>
-											<div class='form-outline '>
+										<div className='col-md-8 '>
+											<div className='form-outline '>
 												<h3>End Date:</h3>
 												<h3 className='text-muted'>{end}</h3>
 											</div>
@@ -128,5 +128,4 @@ export const BookingModal = ({ bookingID, id }) => {
 			</div>
 		);
 	}
-
 };
