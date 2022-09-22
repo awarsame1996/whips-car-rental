@@ -14,9 +14,9 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"seeds": "node src/seeds/index.js",
-		"dev": "nodemon src/index.js",
-		"start": "node src/index.js"
+		"seeds": "node seeds/index.js",
+		"dev": "nodemon index.js",
+		"start": "node index.js"
 	},
 	"repository": {
 		"type": "git",
