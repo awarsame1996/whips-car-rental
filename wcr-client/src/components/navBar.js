@@ -3,9 +3,8 @@ import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
 
 export const Navbars = () => {
-
   return (
-    <nav className=" navbar navbar-expand-lg navbar-dark bg-dark bg-light">
+    <nav className="  navbar navbar-expand-lg navbar-dark bg-dark bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           <i class="fa fa-car" aria-hidden="true"></i>| Whips
@@ -32,7 +31,6 @@ export const Navbars = () => {
             <a className="nav-link" href="/about">
               About
             </a>
-
 
             {/* if user is logged in show saved books and logout */}
             {Auth.loggedIn() ? (

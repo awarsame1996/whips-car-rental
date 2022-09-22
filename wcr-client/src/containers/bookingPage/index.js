@@ -10,6 +10,11 @@ import { useQuery } from '@apollo/client';
 
 import './index.css';
 
+import { motion } from 'framer-motion';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 export const BookingPage = () => {
   const user = JSON.parse(localStorage.getItem('user'));
   // use
@@ -23,10 +28,16 @@ export const BookingPage = () => {
 
   if (data) {
     console.log(data);
+    AOS.init();
 
     return (
-      <div>
+      <motion.div
+        initial={{ width: 0 }}
+        animate={{ width: '100%' }}
+        exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+      >
         <div
+          className=" container py-3 mt-4 mb-4 "
           style={{
             backgroundColor: '#eee',
             minHeight: '90vh',
@@ -36,7 +47,6 @@ export const BookingPage = () => {
 
             borderRadius: '12px',
           }}
-          className=" container py-3 mt-4 mb-4 "
         >
           <div class="row">
             <div class="col">
@@ -64,7 +74,7 @@ export const BookingPage = () => {
         </div>
 
         <Footerr></Footerr>
-      </div>
+      </motion.div>
     );
   }
 };
