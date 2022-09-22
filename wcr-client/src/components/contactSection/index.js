@@ -14,7 +14,7 @@ export const ContactSection = () => {
           Whips Car Rental
         </h5>
 
-        <h7 data-aos="fade-down" className="text-muted mt-4 ">
+        <h7 data-aos="fade-down" className="text-muted mt-4 text-center ">
           Address: 163 Fordhouse Ln, Stirchley, Birmingham B30 3AG{' '}
         </h7>
         <h7 data-aos="fade-down" className="text-muted text-center mt-4 ">
