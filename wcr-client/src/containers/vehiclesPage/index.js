@@ -5,7 +5,6 @@ import { VehicleCard } from '../../components/vehiclesPage/vehiclesCards';
 import { VehicleHero } from '../../components/vehiclesPage/hero';
 import { useQuery } from '@apollo/client';
 import { ALL_CARS } from '../../graphql/queries';
-import { Filter } from '../../components/vehiclesPage/filter';
 
 export const VehiclesPage = () => {
 	// Selected Brand name filter
