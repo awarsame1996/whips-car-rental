@@ -32,6 +32,7 @@ export const VehicleCard = (props) => {
     <div className="col-lg-3 col-md-6 mt-4 mb-5">
       <div
         data-aos="zoom-out-right"
+        data-aos-delay="300"
         className="card vehicles-card text-center border border-primary shadow-0 "
         // style={{background-color:#fafafa}}
       >
@@ -64,9 +65,8 @@ export const VehicleCard = (props) => {
           <h7 className="text-muted mb-1">Incl. 450 miles</h7>
         </div>
 
-				<TestModal car={car} id={carID}></TestModal>
-			</div>
-		</div>
-	);
-
+        <TestModal car={car} id={carID}></TestModal>
+      </div>
+    </div>
+  );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import { SINGLE_USER } from '../../graphql/queries';
 import { useQuery } from '@apollo/client';
 import { useForm } from 'react-hook-form';
@@ -274,4 +275,5 @@ export const AccountPage = () => {
 			</div>
 		);
 	}
+
 };
