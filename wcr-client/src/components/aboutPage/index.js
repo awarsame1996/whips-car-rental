@@ -1,8 +1,13 @@
 import React from 'react';
-
+import { motion } from 'framer-motion';
 export const About = () => {
   return (
-    <div className="aboutpage-section">
+    <motion.div
+      initial={{ width: 0 }}
+      animate={{ width: '100%' }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+      className="aboutpage-section"
+    >
       <div className="dashboard-image">
         <img
           src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGNhciUyMGRhc2hib2FyZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
@@ -40,6 +45,6 @@ export const About = () => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

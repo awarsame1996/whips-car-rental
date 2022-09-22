@@ -1,8 +1,19 @@
 import React from 'react';
 
+import { motion } from 'framer-motion';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 export const AccountPage = () => {
+  AOS.init();
   return (
-    <div className="d-flex row justify-content-center mb-5">
+    <motion.div
+      initial={{ width: 0 }}
+      animate={{ width: '100%' }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.01 } }}
+      className="d-flex row justify-content-center mb-5"
+    >
       <div
         style={{
           backgroundColor: '#eee',
@@ -33,7 +44,7 @@ export const AccountPage = () => {
           </div>
         </div>
 
-        <div class="row mt-3">
+        <div data-aos="zoom-out-down" data-aos-delay="500" class="row mt-3">
           <div
             style={{
               opacity: '0.8',
@@ -152,6 +163,6 @@ export const AccountPage = () => {
           width: '100vw',
         }}
       ></div>
-    </div>
+    </motion.div>
   );
 };
