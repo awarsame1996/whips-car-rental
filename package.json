@@ -5,8 +5,7 @@
 	"main": "wcr-server/index.js",
 	"scripts": {
 		"start": "node wcr-server/index.js",
-		"start:server": "cd wcr-server && npm run dev",
-		"start:client": "cd wcr-client && npm start",
+		"develop": "concurrently \"cd wcr-server && npm run dev\" \"cd wcr-client && npm start\"",
 		"install": "cd wcr-server && npm i && cd ../wcr-client && npm i",
 		"build": "cd wcr-client && npm run build"
 	},
