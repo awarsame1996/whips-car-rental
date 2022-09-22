@@ -39,3 +39,15 @@ export const BOOKING = gql`
 		}
 	}
 `;
+
+export const DELETEUSER = gql`
+	mutation Mutation($userId: ID) {
+		deleteUser(userId: $userId) {
+			id
+			firstName
+			lastName
+			email
+			username
+		}
+	}
+`;

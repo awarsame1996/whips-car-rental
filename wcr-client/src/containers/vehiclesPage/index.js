@@ -21,8 +21,7 @@ export const VehiclesPage = () => {
 
 	// 	console.log('filterListdsfsf', filteredList);
 	// }
-	const carList =
-		filteredList.length > 0 ? filteredList : data?.cars || [];
+	let carList = filteredList.length > 0 ? filteredList : data?.cars || [];
 
 	const handleFilter = (e) => {
 		// setSelectedFilter(e.target.id);
@@ -43,21 +42,27 @@ export const VehiclesPage = () => {
 		sortByPrice(e.target.id);
 	};
 	const sortByPrice = (filteredInput) => {
-		const sorterArray = carList;
-		if (filteredInput == '>') {
-			console.log(sorterArray);
-			console.log(
-				carList.sort((a, b) => (a.dailyPrice > b.dailyPrice ? 1 : -1))
+		console.log(carList);
+
+		console.log(filteredInput);
+
+		if (filteredInput === 'low') {
+			console.log(carList[0].dailyPrice);
+
+			let sortedList = [...carList].sort(
+				(a, b) => a.dailyPrice - b.dailyPrice
 			);
+			setFilteredList(sortedList);
 		}
 
-		if (filteredInput == '<') {
-			console.log(
-				carList.sort((a, b) => (a.dailyPrice > b.dailyPrice ? -1 : 1))
+		if (filteredInput === 'high') {
+			let sortedList = [...carList].sort(
+				(a, b) => b.dailyPrice - a.dailyPrice
 			);
+
+			setFilteredList(sortedList);
 		}
 	};
-	console.log('this is filter list ', filteredList);
 	if (loading) return 'Loading...';
 
 	if (error) return `Error! ${error.message}`;
@@ -220,7 +225,7 @@ export const VehiclesPage = () => {
 							<button
 								className='dropdown-item'
 								type='button'
-								id='<'
+								id='low'
 								onClick={handleSorter}
 							>
 								low to high
@@ -230,7 +235,7 @@ export const VehiclesPage = () => {
 							<button
 								className='dropdown-item'
 								type='button'
-								id='>'
+								id='high'
 								onClick={handleSorter}
 							>
 								high to low

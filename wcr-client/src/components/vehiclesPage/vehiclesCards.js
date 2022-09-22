@@ -64,20 +64,9 @@ export const VehicleCard = (props) => {
           <h7 className="text-muted mb-1">Incl. 450 miles</h7>
         </div>
 
-        {/* <button type="button" className="btn mb-2  btn-primary btn-lg">
-          View
-        </button> */}
+				<TestModal car={car} id={carID}></TestModal>
+			</div>
+		</div>
+	);
 
-        <TestModal car={car} id={carID}></TestModal>
-      </div>
-      {/* <button
-        type="button"
-        className="btn mb-2  btn-dark btn-lg"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-      >
-        View
-      </button> */}
-    </div>
-  );
 };
