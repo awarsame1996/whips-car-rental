@@ -14,15 +14,15 @@ export const ContactSection = () => {
 					Whips Car Rental
 				</h5>
 
-				<h7 data-aos='fade-down' className='text-muted mt-4 text-center '>
+				<h6 data-aos='fade-down' className='text-muted mt-4 text-center '>
 					Address: 163 Fordhouse Ln, Stirchley, Birmingham B30 3AG{' '}
-				</h7>
-				<h7 data-aos='fade-down' className='text-muted text-center mt-4 '>
+				</h6>
+				<h6 data-aos='fade-down' className='text-muted text-center mt-4 '>
 					Monday to Friday: Opens 9am to 5pm
-				</h7>
-				<h7 data-aos='fade-down' className='text-muted text-center mt-4 '>
+				</h6>
+				<h6 data-aos='fade-down' className='text-muted text-center mt-4 '>
 					Phone: 0121 272 7711
-				</h7>
+				</h6>
 			</div>
 
 			<div className=' contact-info '>
@@ -49,7 +49,7 @@ export const ContactSection = () => {
 										marginLeft: '0px',
 									}}
 									className='form-label'
-									for='form3Example1'
+									htmlFor='form3Example1'
 								>
 									First name
 								</label>
@@ -91,7 +91,7 @@ export const ContactSection = () => {
 										marginLeft: '0px',
 									}}
 									className='form-label'
-									for='form3Example2'
+									htmlFor='form3Example2'
 								>
 									Last name
 								</label>
@@ -135,7 +135,7 @@ export const ContactSection = () => {
 							}}
 							data-aos='fade-down'
 							className='form-label'
-							for='form3Example3'
+							htmlFor='form3Example3'
 						>
 							Email address
 						</label>
@@ -167,7 +167,7 @@ export const ContactSection = () => {
 								margin_left: '0px',
 							}}
 							className='form-label'
-							for='form4Example3'
+							htmlFor='form4Example3'
 						>
 							Message
 						</label>

@@ -40,7 +40,7 @@ export const BookingModal = ({ bookingID, id }) => {
 				<div
 					className='modal top fade'
 					id={id}
-					tabindex='-1'
+					tabIndex='-1'
 					aria-labelledby='exampleModalLabel'
 					aria-hidden='true'
 					data-mdb-backdrop='true'

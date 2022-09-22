@@ -189,7 +189,10 @@ export const AccountPage = () => {
 							<div className='row'>
 								<div className='col-md-6 '>
 									<div className='form-outline'>
-										<label className='form-label m-2' for='form3Example1m'>
+										<label
+											className='form-label m-2'
+											htmlFor='form3Example1m'
+										>
 											First Name
 										</label>
 										<input
@@ -204,7 +207,10 @@ export const AccountPage = () => {
 								</div>
 								<div className='col-md-6 '>
 									<div className='form-outline'>
-										<label className='form-label m-2' for='form3Example1m'>
+										<label
+											className='form-label m-2'
+											htmlFor='form3Example1m'
+										>
 											Last Name
 										</label>
 										<input
@@ -223,7 +229,7 @@ export const AccountPage = () => {
 									<div className='form-outline'>
 										<label
 											className='form-label m-2 '
-											for='form3Example1m'
+											htmlFor='form3Example1m'
 										>
 											User Name
 										</label>
@@ -239,7 +245,10 @@ export const AccountPage = () => {
 								</div>
 								<div className='col-md-6 '>
 									<div className='form-outline'>
-										<label className='form-label m-2' for='form3Example1m'>
+										<label
+											className='form-label m-2'
+											htmlFor='form3Example1m'
+										>
 											Email Name
 										</label>
 										<input

@@ -63,7 +63,7 @@ export const LoginForm = () => {
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<div className='mb-3'>
-				<label for='email' className='form-label'>
+				<label htmlFor='email' className='form-label'>
 					Email address
 				</label>
 				<input
@@ -86,7 +86,7 @@ export const LoginForm = () => {
 				</div>
 			</div>
 			<div className='mb-3'>
-				<label for='password' className='form-label'>
+				<label htmlFor='password' className='form-label'>
 					Password
 				</label>
 				<input

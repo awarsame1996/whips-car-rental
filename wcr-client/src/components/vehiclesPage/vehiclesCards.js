@@ -63,9 +63,9 @@ export const VehicleCard = (props) => {
 					data-aos-delay='300'
 					className='card-info mb-2 mt-4 border-sm-start-none border-bottom '
 				>
-					<h7 className='text-muted'>Deposit: £500</h7>
-					<h7 className='text-muted'>Insurance: Comprehensive</h7>
-					<h7 className='text-muted mb-1'>Incl. 450 miles</h7>
+					<h6 className='text-muted'>Deposit: £500</h6>
+					<h6 className='text-muted'>Insurance: Comprehensive</h6>
+					<h6 className='text-muted mb-1'>Incl. 450 miles</h6>
 				</div>
 
 				<CarModal car={car} id={carID}></CarModal>
