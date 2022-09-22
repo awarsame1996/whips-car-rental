@@ -1,12 +1,15 @@
 import React from 'react';
 
-
 import { SINGLE_USER } from '../../graphql/queries';
 import { useQuery } from '@apollo/client';
 import { useForm } from 'react-hook-form';
 import { useMutation } from '@apollo/client';
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import './index.css';
 import AuthService from '../../utils/auth';
@@ -116,8 +119,14 @@ export const AccountPage = () => {
 			}
 		};
 
+		AOS.init();
 		return (
-			<div className='d-flex row justify-content-center mb-5'>
+			<motion.div
+				initial={{ width: 0 }}
+				animate={{ width: '100%' }}
+				exit={{ x: window.innerWidth, transition: { duration: 0.01 } }}
+				className='d-flex row justify-content-center mb-5'
+			>
 				<form
 					onSubmit={handleSubmit(handleUpdate)}
 					style={{
@@ -272,8 +281,7 @@ export const AccountPage = () => {
 						width: '100vw',
 					}}
 				></div>
-			</div>
+			</motion.div>
 		);
 	}
-
 };
