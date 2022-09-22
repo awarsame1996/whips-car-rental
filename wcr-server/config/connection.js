@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 
 const connectToDatabase = async () => {
 	try {
-		const MONGODB_URI =
-			process.env.MONGODB_URI ||
+		const MONGDB_URI =
+			process.env.MONGDB_URI ||
 			`mongodb://localhost:27017/${process.env.DB_NAME}`;
 
 		const options = {
@@ -13,7 +13,7 @@ const connectToDatabase = async () => {
 			useUnifiedTopology: true,
 		};
 
-		await mongoose.connect(MONGODB_URI, options);
+		await mongoose.connect(MONGDB_URI, options);
 
 		console.log(
 			`[INFO]: Successfully connected to database | ${process.env.DB_NAME}`
