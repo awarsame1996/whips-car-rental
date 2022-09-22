@@ -143,7 +143,14 @@
 }
 
 /* user journey section */
-
+.journey-container {
+  background: #232923;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
 .j-card-container {
   background: #232923;
   display: flex;
