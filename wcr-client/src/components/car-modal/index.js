@@ -5,7 +5,7 @@ import { BOOKING } from '../../graphql/mutations';
 import swal from 'sweetalert';
 
 export const CarModal = ({ car, id }) => {
-	const [booking, { loading, error }] = useMutation(BOOKING, {
+	const [booking] = useMutation(BOOKING, {
 		onCompleted: (data) => {},
 		onError: (error) => {
 			console.error(error);
@@ -21,10 +21,6 @@ export const CarModal = ({ car, id }) => {
 	} = useForm();
 
 	let checkboxesEmpty = false;
-
-	const closeModal = () => {
-		console.log('hi');
-	};
 
 	const onSubmit = async (formData) => {
 		const { isDailyCheckBox, isWeeklyCheckBox, startDate, endDate } =
