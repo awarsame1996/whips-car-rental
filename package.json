@@ -1,20 +1,24 @@
 {
-  "name": "whips-car-rental",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/awarsame1996/whips-car-rental.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/awarsame1996/whips-car-rental/issues"
-  },
-  "homepage": "https://github.com/awarsame1996/whips-car-rental#readme"
+	"name": "whips-car-rental",
+	"version": "1.0.0",
+	"description": "",
+	"main": "wcr-server/index.js",
+	"scripts": {
+		"start": "node wcr-server/index.js",
+		"start:server": "cd wcr-server && npm run dev",
+		"start:client": "cd wcr-client && npm start",
+		"install": "cd wcr-server && npm i && cd ../wcr-client && npm i",
+		"build": "cd wcr-client && npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/awarsame1996/whips-car-rental.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/awarsame1996/whips-car-rental/issues"
+	},
+	"homepage": "https://github.com/awarsame1996/whips-car-rental#readme"
 }
