@@ -13,7 +13,7 @@ export const About = () => {
           src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGNhciUyMGRhc2hib2FyZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
           className="dashboard-image"
         />
-        <h1 class="col-md-8 bannr-text">About Our Small Business</h1>
+        <h1 className="col-md-8 bannr-text">About Our Small Business</h1>
       </div>
 
       <div className="about-text col-md-8    text-center">

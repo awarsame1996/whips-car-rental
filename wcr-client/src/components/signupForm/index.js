@@ -36,7 +36,6 @@ export const SignupForm = () => {
 			email,
 			password,
 		};
-		console.log(signupInput);
 
 		try {
 			await signup({
@@ -60,7 +59,7 @@ export const SignupForm = () => {
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<div className='mb-3'>
-				<label for='firstName' className='form-label'>
+				<label htmlFor='firstName' className='form-label'>
 					first name
 				</label>
 				<input
@@ -82,7 +81,7 @@ export const SignupForm = () => {
 				<p>{errors.firstName?.message}</p>
 			</div>
 			<div className='mb-3'>
-				<label for='lastName' className='form-label'>
+				<label htmlFor='lastName' className='form-label'>
 					last name
 				</label>
 				<input
@@ -104,7 +103,7 @@ export const SignupForm = () => {
 				<p>{errors.lastName?.message}</p>
 			</div>
 			<div className='mb-3'>
-				<label for='username' className='form-label'>
+				<label htmlFor='username' className='form-label'>
 					username
 				</label>
 				<input
@@ -127,7 +126,7 @@ export const SignupForm = () => {
 			</div>
 
 			<div className='mb-3'>
-				<label for='email' className='form-label'>
+				<label htmlFor='email' className='form-label'>
 					Email address
 				</label>
 				<input
@@ -148,7 +147,7 @@ export const SignupForm = () => {
 			</div>
 
 			<div className='mb-3'>
-				<label for='password' className='form-label'>
+				<label htmlFor='password' className='form-label'>
 					Password
 				</label>
 				<input
@@ -160,7 +159,7 @@ export const SignupForm = () => {
 				<p>{errors.password?.message} </p>
 			</div>
 			<div className='mb-3'>
-				<label for='confirmPassword' className='form-label'>
+				<label htmlFor='confirmPassword' className='form-label'>
 					Confirm Password
 				</label>
 				<input

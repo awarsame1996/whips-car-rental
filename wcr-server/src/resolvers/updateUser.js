@@ -5,7 +5,7 @@ const updateUser = async (_, { userId, userInput }) => {
 	const user = await User.findOneAndUpdate({ _id: userId }, userInput, {
 		new: true,
 	});
-	console.log('USER', user);
+
 	return user;
 };
 

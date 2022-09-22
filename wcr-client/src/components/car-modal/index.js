@@ -2,12 +2,10 @@ import './index.css';
 import { useForm } from 'react-hook-form';
 import { useMutation } from '@apollo/client';
 import { BOOKING } from '../../graphql/mutations';
-import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 
-export const TestModal = ({ car, id }) => {
-	const navigate = useNavigate();
-	const [booking, { loading, error }] = useMutation(BOOKING, {
+export const CarModal = ({ car, id }) => {
+	const [booking] = useMutation(BOOKING, {
 		onCompleted: (data) => {},
 		onError: (error) => {
 			console.error(error);
@@ -18,16 +16,11 @@ export const TestModal = ({ car, id }) => {
 	const {
 		register,
 		handleSubmit,
-		setError,
-		clearErrors,
+
 		formState: { errors },
 	} = useForm();
 
 	let checkboxesEmpty = false;
-
-	const closeModal = () => {
-		console.log('hi');
-	};
 
 	const onSubmit = async (formData) => {
 		const { isDailyCheckBox, isWeeklyCheckBox, startDate, endDate } =
@@ -77,7 +70,7 @@ export const TestModal = ({ car, id }) => {
 				{/* <!-- Button trigger modal --> */}
 				<button
 					type='button'
-					class='btn btn-dark mb-2'
+					className='btn btn-dark mb-2'
 					data-mdb-toggle='modal'
 					data-mdb-target={`#${id}`}
 				>
@@ -86,9 +79,9 @@ export const TestModal = ({ car, id }) => {
 
 				{/* <!-- Modal --> */}
 				<div
-					class='modal top fade'
+					className='modal top fade'
 					id={id}
-					tabindex='-1'
+					tabIndex='-1'
 					aria-labelledby='exampleModalLabel'
 					aria-hidden='true'
 					data-mdb-backdrop='true'
@@ -163,7 +156,9 @@ export const TestModal = ({ car, id }) => {
 												{errors?.startDate && (
 													<p>Please input a start date</p>
 												)}
-												<label for='startDate'>Booking start date</label>
+												<label htmlFor='startDate'>
+													Booking start date
+												</label>
 											</div>
 											<div className='form-floating mb-3'>
 												<input
@@ -174,7 +169,7 @@ export const TestModal = ({ car, id }) => {
 													{...register('endDate', { required: true })}
 												/>
 												{errors.endDate && <p>{errors.endDate.message}</p>}
-												<label for='endDate'>Booking end date</label>
+												<label htmlFor='endDate'>Booking end date</label>
 											</div>
 										</div>
 

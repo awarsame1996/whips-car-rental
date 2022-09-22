@@ -37,7 +37,6 @@ export const LoginForm = () => {
 	});
 
 	const onSubmit = async (formData) => {
-		console.log(formData.password, formData.email);
 		if (!formData.password || !formData.email) {
 			setError('password', {
 				type: 'customError',
@@ -48,7 +47,7 @@ export const LoginForm = () => {
 				email: formData.email,
 				password: formData.password,
 			};
-			console.log(loginInput);
+
 			try {
 				await login({
 					variables: {
@@ -63,7 +62,7 @@ export const LoginForm = () => {
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<div className='mb-3'>
-				<label for='email' className='form-label'>
+				<label htmlFor='email' className='form-label'>
 					Email address
 				</label>
 				<input
@@ -86,7 +85,7 @@ export const LoginForm = () => {
 				</div>
 			</div>
 			<div className='mb-3'>
-				<label for='password' className='form-label'>
+				<label htmlFor='password' className='form-label'>
 					Password
 				</label>
 				<input

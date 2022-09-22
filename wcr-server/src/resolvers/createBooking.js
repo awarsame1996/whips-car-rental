@@ -14,20 +14,17 @@ const createBooking = async (_, { createBookingInput }, { user }) => {
 			let duration;
 
 			let start = startDate;
-			console.log(start);
 
 			const startArray = start.split('-');
 			const newStartDate =
 				startArray[1] + '/' + startArray[2] + '/' + startArray[0];
 			let startDuration = new Date(newStartDate);
-			console.log('start', newStartDate);
 
 			let end = endDate;
 			const endArray = end.split('-');
 			const newEndDate =
 				endArray[1] + '/' + endArray[2] + '/' + endArray[0];
 			let endDuration = new Date(newEndDate);
-			console.log('end', newEndDate);
 
 			const timeDifference =
 				endDuration.getTime() - startDuration.getTime();
@@ -35,7 +32,6 @@ const createBooking = async (_, { createBookingInput }, { user }) => {
 				price = car.get('dailyPrice');
 
 				duration = timeDifference / (1000 * 60 * 60 * 24);
-				console.log(duration);
 			}
 
 			if (!isDaily && isWeekly) {
@@ -44,9 +40,8 @@ const createBooking = async (_, { createBookingInput }, { user }) => {
 				duration = timeDifference / (1000 * 60 * 60 * 24);
 			}
 			const totalCost = price * duration;
-			console.log('totalCost', totalCost);
+
 			// calculating difference of days
-			console.log('dsadasd', startDate);
 
 			const newBooking = await Booking.create({
 				startDate: newStartDate,
