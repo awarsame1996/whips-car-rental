@@ -2,8 +2,9 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useMutation } from '@apollo/client';
 import { SIGNUP } from '../../graphql/mutations';
-
+import { useNavigate } from 'react-router-dom';
 export const SignupForm = () => {
+	const navigate = useNavigate();
 	const {
 		register,
 		handleSubmit,
@@ -11,7 +12,7 @@ export const SignupForm = () => {
 	} = useForm({ mode: 'all' });
 	const [signup, { loading, error }] = useMutation(SIGNUP, {
 		onCompleted: (data) => {
-			console.log(data);
+			navigate('/login', { replace: true });
 		},
 		onError: (error) => {
 			console.error(error);
