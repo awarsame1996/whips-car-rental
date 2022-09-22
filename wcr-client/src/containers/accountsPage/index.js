@@ -32,9 +32,7 @@ export const AccountPage = () => {
 			navigate('/', { replace: true });
 			AuthService.logout();
 		},
-		onError: (error) => {
-			console.error(error);
-		},
+		onError: (error) => {},
 	});
 
 	const user = JSON.parse(localStorage.getItem('user'));
