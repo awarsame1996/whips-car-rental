@@ -36,7 +36,6 @@ export const SignupForm = () => {
 			email,
 			password,
 		};
-		console.log(signupInput);
 
 		try {
 			await signup({

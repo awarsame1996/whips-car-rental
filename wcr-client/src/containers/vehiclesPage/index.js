@@ -31,12 +31,12 @@ export const VehiclesPage = () => {
 		sortByPrice(e.target.id);
 	};
 	const sortByPrice = (filteredInput) => {
-		console.log(carList);
+		
 
-		console.log(filteredInput);
+		
 
 		if (filteredInput === 'low') {
-			console.log(carList[0].dailyPrice);
+			
 
 			let sortedList = [...carList].sort(
 				(a, b) => a.dailyPrice - b.dailyPrice

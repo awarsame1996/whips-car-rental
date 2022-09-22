@@ -51,13 +51,13 @@ export const AccountPage = () => {
 		const handleUpdate = async (formData) => {
 			let { firstName, lastName, username, email, id } = user;
 
-			console.log(user);
+	
 
 			const { firstNameInput, lastNameInput, usernameInput, emailInput } =
 				formData;
 
 			if (firstNameInput.length > 3) {
-				console.log('hit');
+			
 				firstName = firstNameInput;
 			}
 			if (lastNameInput.length > 3) {

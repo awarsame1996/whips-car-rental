@@ -23,7 +23,6 @@ export const BookingPage = () => {
 	if (error) return `Error! ${error.message}`;
 
 	if (data) {
-		console.log(data);
 		AOS.init();
 
 		return (
