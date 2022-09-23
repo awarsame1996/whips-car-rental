@@ -6,6 +6,7 @@ const connectToDatabase = require('./config/connection');
 const typeDefs = require('./typeDefs');
 const resolvers = require('./resolvers');
 const { authMiddleware } = require('./context/auth');
+const { InMemoryLRUCache } = require('@apollo/utils.keyvaluecache');
 
 const PORT = process.env.PORT || 4000;
 
@@ -17,6 +18,7 @@ const init = async () => {
 			typeDefs,
 			resolvers,
 			context: authMiddleware,
+			cache: new InMemoryLRUCache(),
 		});
 
 		const { url } = await server.listen(PORT);
