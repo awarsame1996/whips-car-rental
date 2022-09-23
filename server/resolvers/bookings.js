@@ -1,4 +1,4 @@
-const { AuthenticationError, ApolloError } = require('apollo-server');
+const { AuthenticationError, ApolloError } = require('apollo-server-express');
 const { Booking } = require('../models');
 
 const bookings = async (_, __, { user }) => {

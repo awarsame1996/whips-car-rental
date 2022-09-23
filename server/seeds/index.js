@@ -10,27 +10,24 @@ const clearCollections = async () => {
 	// await Booking.deleteMany({});
 };
 
-const init = async () => {
-	try {
-		// connect to DB
-		await connectToDatabase();
+connectToDatabase.once('open', async () => {
 
+	try {
 		// clear all collections
 		await clearCollections();
-
+	
 		// seed users
 		await seedUsers();
-
+	
 		// // seed Cars
 		await seedCars();
-
+	
 		// // seed bookings
 		// await seedBookings();
 	} catch (error) {
 		console.log(`[ERROR]: Failed to seed DB | ${error.message}`);
 	}
-
+	
 	process.exit(0);
-};
+})
 
-init();

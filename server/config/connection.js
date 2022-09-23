@@ -1,25 +1,11 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const connectToDatabase = async () => {
-	try {
-		const MONGDB_URI =
-			process.env.MONGDB_URI || `mongodb://localhost:27017/whips_db`;
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/mern-shopping",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
-		const options = {
-			useNewUrlParser: true,
-			useUnifiedTopology: true,
-		};
-
-		await mongoose.connect(MONGDB_URI, options);
-
-		console.log(`[INFO]: Successfully connected to database | `);
-	} catch (error) {
-		console.log(
-			`[ERROR]: Failed to connect to database | ${error.message}`
-		);
-
-		throw new Error('Failed to connect to database');
-	}
-};
-
-module.exports = connectToDatabase;
+module.exports = mongoose.connection;
