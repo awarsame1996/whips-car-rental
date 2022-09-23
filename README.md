@@ -22,6 +22,11 @@ cd whips-car-rental
 cd server nmp i && cd client npm i
 ```
 
+## links
+
+heroku link: [open](https://boiling-shelf-76204.herokuapp.com/)
+GitHub repository: [open](https://github.com/awarsame1996/whips-car-rental.git)
+
 ## About The Project
 
 Whips Car Rental is a React.js application, using Graphql queries and mutations to connect with our Apollo server and mongoDB database.
