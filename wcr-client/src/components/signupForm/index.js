@@ -20,14 +20,7 @@ export const SignupForm = () => {
 	});
 
 	const onSubmit = async (formData) => {
-		const {
-			firstName,
-			lastName,
-			username,
-			email,
-			password,
-			confirmPassword,
-		} = formData;
+		const { firstName, lastName, username, email, password } = formData;
 
 		const signupInput = {
 			firstName,

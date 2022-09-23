@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 } from 'uuid';
 
 import './style.css';
 import { VehicleCard } from '../../components/vehiclesPage/vehiclesCards';
@@ -31,13 +32,7 @@ export const VehiclesPage = () => {
 		sortByPrice(e.target.id);
 	};
 	const sortByPrice = (filteredInput) => {
-		
-
-		
-
 		if (filteredInput === 'low') {
-			
-
 			let sortedList = [...carList].sort(
 				(a, b) => a.dailyPrice - b.dailyPrice
 			);
@@ -152,45 +147,7 @@ export const VehiclesPage = () => {
 						</li>
 					</ul>
 				</div>
-				<div className='btn-group'>
-					<button
-						type='button'
-						className='btn  btn-dark dropdown-toggle'
-						data-mdb-toggle='dropdown'
-						aria-expanded='false'
-					>
-						Any Model
-					</button>
-					<ul className='dropdown-menu dropdown-menu-end'>
-						<li>
-							<button
-								className='dropdown-item'
-								type='button'
-								onClick={handleFilter}
-							>
-								Action
-							</button>
-						</li>
-						<li>
-							<button
-								className='dropdown-item'
-								type='button'
-								onClick={handleFilter}
-							>
-								Another action
-							</button>
-						</li>
-						<li>
-							<button
-								className='dropdown-item'
-								type='button'
-								onClick={handleFilter}
-							>
-								Something else here
-							</button>
-						</li>
-					</ul>
-				</div>
+
 				<div className='btn-group'>
 					<button
 						type='button'
@@ -236,7 +193,11 @@ export const VehiclesPage = () => {
 			<div className='container'>
 				<div className='row gx-2 justify-content-start'>
 					{carList.map((car) => {
-						return <VehicleCard car={car}> </VehicleCard>;
+						return (
+							<VehicleCard car={car} key={v4()}>
+								{' '}
+							</VehicleCard>
+						);
 					})}
 				</div>
 			</div>

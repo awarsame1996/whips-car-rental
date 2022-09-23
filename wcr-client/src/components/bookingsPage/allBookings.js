@@ -41,6 +41,7 @@ export const AllBookings = (props) => {
 									<img
 										src={`${booking.car[0].imageUrl}`}
 										className='booking-image'
+										alt='car-img'
 									/>
 									{/* <a href="#!">
 

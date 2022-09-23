@@ -7,6 +7,7 @@ import { useQuery } from '@apollo/client';
 import './index.css';
 
 import { motion } from 'framer-motion';
+import { v4 } from 'uuid';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -67,7 +68,9 @@ export const BookingPage = () => {
 						<h1>All Bookings</h1>
 					</div>
 					{data.user.bookings.map((booking) => {
-						return <AllBookings booking={booking}></AllBookings>;
+						return (
+							<AllBookings booking={booking} key={v4()}></AllBookings>
+						);
 					})}
 				</div>
 			</motion.div>

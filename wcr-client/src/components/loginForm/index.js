@@ -15,7 +15,7 @@ export const LoginForm = () => {
 		setError,
 		formState: { errors },
 	} = useForm({ mode: 'all' });
-	const [login, { loading, error }] = useMutation(LOGIN, {
+	const [login] = useMutation(LOGIN, {
 		onCompleted: (data) => {
 			const payload = {
 				token: data.login.token,

@@ -10,7 +10,7 @@ export const Navbars = () => {
 			}}
 		>
 			<div className='container-fluid'>
-				<a className='navbar-brand' href='#'>
+				<a className='navbar-brand' href='/'>
 					<i className='fa fa-car' aria-hidden='true'></i>| Whips
 				</a>
 				<button
@@ -42,7 +42,6 @@ export const Navbars = () => {
 								<li className='nav-item dropdown'>
 									<a
 										className='nav-link dropdown-toggle'
-										href='#'
 										id='navbarDropdownMenuLink'
 										role='button'
 										data-mdb-toggle='dropdown'
@@ -66,7 +65,7 @@ export const Navbars = () => {
 										</li>
 									</ul>
 								</li>
-								<a className='nav-link' onClick={Auth.logout} href=''>
+								<a className='nav-link' onClick={Auth.logout} href='/'>
 									{'Logout'}
 								</a>
 							</>

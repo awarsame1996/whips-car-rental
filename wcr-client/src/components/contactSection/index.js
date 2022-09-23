@@ -42,7 +42,6 @@ export const ContactSection = () => {
 									type='text'
 									id='form3Example1'
 									className='form-control'
-									autocomplete='off'
 								/>
 								<label
 									style={{
@@ -84,7 +83,6 @@ export const ContactSection = () => {
 									type='text'
 									id='form3Example2'
 									className='form-control'
-									autocomplete='off'
 								/>
 								<label
 									style={{
@@ -127,7 +125,6 @@ export const ContactSection = () => {
 							type='email'
 							id='form3Example3'
 							className='form-control'
-							autocomplete='off'
 						/>
 						<label
 							style={{
