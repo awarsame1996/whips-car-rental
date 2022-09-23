@@ -2,14 +2,12 @@
 	"name": "whips-car-rental",
 	"version": "1.0.0",
 	"description": "",
-	"main": "wcr-server/index.js",
+	"main": "server/index.js",
 	"scripts": {
-		"start": "npm run start:client",
-		"start:server": "cd wcr-server && npm run dev",
-		"start:client": "cd wcr-client && npm start",
-		"develop": "concurrently \"cd wcr-server && npm run dev\" \"cd wcr-client && npm start\"",
-		"install": "cd wcr-server && npm i && cd ../wcr-client && npm i",
-		"build": "cd wcr-client && npm run build"
+		"start": "node server/index.js",
+		"develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+		"install": "cd server && npm i && cd ../client && npm i",
+		"build": "cd client && npm run build"
 	},
 	"repository": {
 		"type": "git",
