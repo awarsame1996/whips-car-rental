@@ -4,10 +4,9 @@
 	"description": "",
 	"main": "wcr-server/index.js",
 	"scripts": {
-		"start": "node wcr-server/index.js",
+		"start": "npm run start:client && npm run start:server",
 		"start:server": "cd wcr-server && npm run dev",
 		"start:client": "cd wcr-client && npm start",
-		"develop": "npm run start:client && npm run start:server",
 		"install": "cd wcr-server && npm i && cd ../wcr-client && npm i",
 		"build": "cd wcr-client && npm run build"
 	},
