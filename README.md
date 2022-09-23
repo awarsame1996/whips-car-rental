@@ -5,17 +5,22 @@
 Whips Car Rental - Your Quick and easy rental service that creates a nice and easy experience for our customers. We want to make renting a car as simple and personal as driving your own.
 Renting a car brings you freedom, and we’ll help you find the right car for you at a great price. But there’s much more to us than that. We're here to make renting a car a lot less hassle.
 
-A user will ne able to sign up and login, from there you will have access to our catalogue of cars, where you will be able to book and delete. A user will also have the ability to
+A user will be able to sign up and login, from there you will have access to our catalogue of cars, where you will be able to book and delete. A user will also have the ability to
 update their personal details on their account.
 
 ## Getting Started
 
-To run our application you would have to firslty git clone the repository.
+To run our application you would have to firstly git clone the repository.
 
 GitHub repository: [https://github.com/awarsame1996/whips-car-rental.git](https://github.com/awarsame1996/whips-car-rental.git)
 
+### installation
+
+```
+
 cd whips-car-rental
 cd server nmp i && cd client npm i
+```
 
 ## About The Project
 
@@ -30,13 +35,13 @@ Whips Car Rental is a React.js application, using Graphql queries and mutations 
 
 ## Screenshots
 
-![Homepage](./wcr-client/public/img/homepage.png.png)
-![loginpage](./wcr-client/public/img/login.png.png)
-![Aboutpage](./wcr-client/public/img/about.png.png)
-![Vehiclespage](./wcr-client/public/img/vehicles.png.png)
-![profilepage](./wcr-client/public/img/profile.png.png)
+![Homepage](./client/public/img/homepage.png)
+![loginpage](./client/public/img/login.png)
+![Aboutpage](./client/public/img/about.png)
+![Vehiclespage](./client/public/img/vehicles.png)
+![profilepage](./client/public/img/profile.png)
 
 ## contributors
 
-[Abdilatif Warsame](https://github.com/awarsame1996)
-[Abdinasir Warsame](https://github.com/abdinasir1993)
+- [Abdilatif Warsame](https://github.com/awarsame1996)
+- [Abdinasir Warsame](https://github.com/abdinasir1993)
