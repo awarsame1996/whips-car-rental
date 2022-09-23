@@ -23,15 +23,5 @@ const connectToDatabase = async () => {
 		throw new Error('Failed to connect to database');
 	}
 };
-// const mongoose = require('mongoose');
-
-// mongoose.connect(process.env.MONGDB_URI || 'mongodb://localhost/whips_db', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-//   useCreateIndex: true,
-//   useFindAndModify: false,
-// });
-
-// module.exports = mongoose.connection;
 
 module.exports = connectToDatabase;

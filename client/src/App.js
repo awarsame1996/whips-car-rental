@@ -17,8 +17,7 @@ import 'aos/dist/aos.css';
 import { Footer } from './components/footer/footer';
 
 const httpLink = createHttpLink({
-	uri: 'http://localhost:4000/graphql',
-	credentials: 'same-origin',
+	uri: process.env.GRAPHQL_URL || 'http://localhost:4000/',
 });
 
 const authLink = setContext((_, { headers }) => {
