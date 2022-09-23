@@ -9,6 +9,7 @@ const { authMiddleware } = require('./context/auth');
 const { InMemoryLRUCache } = require('@apollo/utils.keyvaluecache');
 const express = require('express');
 
+const path = require('path');
 const PORT = process.env.PORT || 4000;
 
 const app = express();
