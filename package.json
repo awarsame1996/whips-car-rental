@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "wcr-server/index.js",
 	"scripts": {
-		"start": "node wcr-server/index.js",
+		"start": "npm run start:client",
 		"start:server": "cd wcr-server && npm run dev",
 		"start:client": "cd wcr-client && npm start",
 		"develop": "concurrently \"cd wcr-server && npm run dev\" \"cd wcr-client && npm start\"",
