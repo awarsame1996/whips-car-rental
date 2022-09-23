@@ -1,4 +1,4 @@
-const { AuthenticationError, ApolloError } = require('apollo-server');
+const { AuthenticationError, ApolloError } = require('apollo-server-express');
 const { Schema } = require('mongoose');
 const { Car, User, Booking } = require('../models');
 
