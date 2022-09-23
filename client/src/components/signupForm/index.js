@@ -10,7 +10,7 @@ export const SignupForm = () => {
 		handleSubmit,
 		formState: { errors },
 	} = useForm({ mode: 'all' });
-	const [signup, { loading, error }] = useMutation(SIGNUP, {
+	const [signup, {  loading, error }] = useMutation(SIGNUP, {
 		onCompleted: (data) => {
 			navigate('/login', { replace: true });
 		},
