@@ -7,7 +7,7 @@ const typeDefs = require('./typeDefs');
 const resolvers = require('./resolvers');
 const { authMiddleware } = require('./context/auth');
 const { InMemoryLRUCache } = require('@apollo/utils.keyvaluecache');
-const express = requir('express');
+const express = require('express');
 
 const PORT = process.env.PORT || 4000;
 
