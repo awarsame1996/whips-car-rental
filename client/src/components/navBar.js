@@ -1,5 +1,6 @@
 import React from 'react';
 import Auth from '../utils/auth';
+import { Link } from 'react-router-dom';
 
 export const Navbars = () => {
 	return (
@@ -26,15 +27,24 @@ export const Navbars = () => {
 				</button>
 				<div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
 					<div className='navbar-nav container-fluid justify-content-between'>
-						<a className='nav-link active' aria-current='page' href='/'>
+						<Link className='nav-link active' aria-current='page' to='/'>
 							Home
-						</a>
-						<a className='nav-link' href='/vehicles'>
+						</Link>
+
+						<Link
+							className='nav-link active'
+							aria-current='page'
+							to='/vehicles'
+						>
 							Vehicles
-						</a>
-						<a className='nav-link' href='/about'>
+						</Link>
+						<Link
+							className='nav-link active'
+							aria-current='page'
+							to='/about'
+						>
 							About
-						</a>
+						</Link>
 
 						{/* if user is logged in show saved books and logout */}
 						{Auth.loggedIn() ? (
@@ -54,14 +64,22 @@ export const Navbars = () => {
 										aria-labelledby='navbarDropdownMenuLink'
 									>
 										<li>
-											<a className='dropdown-item' href='/accounts'>
-												{' MY Profile '}
-											</a>
+											<Link
+												className='nav-link active'
+												aria-current='page'
+												to='/accounts'
+											>
+												my account
+											</Link>
 										</li>
 										<li>
-											<a className='dropdown-item' href='/bookings'>
-												{'My Bookings '}
-											</a>
+											<Link
+												className='nav-link '
+												aria-current='page'
+												to='/bookings'
+											>
+												bookings
+											</Link>
 										</li>
 									</ul>
 								</li>
@@ -71,12 +89,20 @@ export const Navbars = () => {
 							</>
 						) : (
 							<>
-								<a className='nav-link' href='/sign-up'>
-									{' sign up'}
-								</a>
-								<a className='nav-link' href='/login'>
-									{' login'}
-								</a>
+								<Link
+									className='nav-link '
+									aria-current='page'
+									to='/sign-up'
+								>
+									sign up
+								</Link>
+								<Link
+									className='nav-link '
+									aria-current='page'
+									to='/login'
+								>
+									Login
+								</Link>
 							</>
 						)}
 					</div>
