@@ -17,8 +17,7 @@ import 'aos/dist/aos.css';
 import { Footer } from './components/footer/footer';
 
 const httpLink = createHttpLink({
-	uri:
-		process.env.GRAPHQL_URL || 'http://mongodb://127.0.0.1:27017/whips_db',
+	uri: process.env.MONGODB_URI || 'http://localhost:4000/',
 });
 
 const authLink = setContext((_, { headers }) => {
