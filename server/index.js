@@ -6,6 +6,7 @@ const connectToDatabase = require('./config/connection');
 const typeDefs = require('./typeDefs');
 const resolvers = require('./resolvers');
 const { authMiddleware } = require('./context/auth');
+const { InMemoryLRUCache } = require('@apollo/utils.keyvaluecache');
 const express = require('express');
 const path = require('path');
 
@@ -16,6 +17,7 @@ const server = new ApolloServer({
 	typeDefs,
 	resolvers,
 	context: authMiddleware,
+	cache: new InMemoryLRUCache(),
 });
 
 app.use(express.urlencoded({ extended: false }));
