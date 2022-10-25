@@ -17,9 +17,7 @@ import 'aos/dist/aos.css';
 import { Footer } from './components/footer/footer';
 
 const httpLink = createHttpLink({
-	uri:
-		'https://boiling-shelf-76204.herokuapp.com' ||
-		'http://localhost:4000/',
+	uri: process.env.REACT_APP_GRAPHQL || 'http://localhost:4000/grapql',
 });
 
 const authLink = setContext((_, { headers }) => {
