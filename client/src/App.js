@@ -17,7 +17,7 @@ import 'aos/dist/aos.css';
 import { Footer } from './components/footer/footer';
 
 const httpLink = createHttpLink({
-	uri: process.env.MONGODB_URI || 'http://localhost:4000/',
+	uri: process.env.REACT_APP_GRAPHQL || 'http://localhost:4000/grapql',
 });
 
 const authLink = setContext((_, { headers }) => {
